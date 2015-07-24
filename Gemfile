@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem 'rake'
+gem 'sinatra-flash'
 
 gem 'sinatra'
 gem 'sinatra-contrib'

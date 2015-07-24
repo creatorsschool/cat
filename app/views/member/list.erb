@@ -1,0 +1,15 @@
+<h1>All Members</h1>
+<% @members.each do |member| %>
+
+	<table class="table table-hover">
+   <tbody>
+   <li class="list-group-item">
+		<ul>
+			<li><label>Name:</label><%=member.name%></li>
+
+			<a href="/member/<%=member.id%>/remove"><span class="badge">Remove</span></a>
+		</ul>
+	</li>
+  </tbody>
+  </table>
+<%end%>
