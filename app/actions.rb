@@ -15,11 +15,18 @@ end
 
 
 get "/member/search" do
-	if params[:name].downcase && params[:name] != ""
-		@members = Member.where("name LIKE ?", "%#{params[:name]}%")
-	 erb :"member/list"
+	if params[:name] && params[:name] != ""
+		@members = Member.where("name LIKE ?", "#{params[:name]}%")
+
+  else
+    @members = Member.all
+  end
+
+  if @members != []
+	  erb :"member/list"
 	else
-		"Sorry, no matches found"
+    flash[:error] = "Sorry Patrícia, no matches found for your search"
+		redirect "/member"
 	end
 end
 
