@@ -6,8 +6,8 @@
 	<h2>Skills</h2>
 	<div>
 		<% @skills.each do |skill| %>
+			<label><%= skill.name %></label>
 			<input type="checkbox" name="skills[]" value="<%= skill.id %>">
-			<%= skill.name %>
 		<% end %>
 	</div>
 	<button>Submit</button>
