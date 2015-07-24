@@ -1,0 +1,33 @@
+<h1>All projects</h1>
+
+<h1>CAT</h1>
+<a href="/project/list">All Projects</a>
+
+
+<div class= "search-form">
+  <form action="/project/search" method="get">
+   <input type="text" name="name" placeholder="insert here the name your looking for">
+   <button type="submit">Search</button>
+  </form>
+</div>
+
+
+<div class="form-group has-error">
+  <label class="control-label" for="inputError1"><%= flash[:error] %></label>
+  
+</div>
+
+<% @projects.each do |project| %>
+
+	<table class="table table-hover">
+   <tbody>
+   <li class="list-group-item">
+		<ul>
+			<li><label>Name:</label><%=project.name%></li>
+
+			<a href="/project/<%=project.id%>/remove"><span class="badge">Remove</span></a>
+		</ul>
+	</li>
+  </tbody>
+  </table>
+<%end%>
