@@ -12,7 +12,7 @@ a > .text-primary:hover{
 	padding: 5px 10px;
 }
 
-.jumbotron.main.project, .jumbotron.main.member{
+.jumbotron.main.project, .jumbotron.main.member, .jumbotron.main.menu{
 	padding-bottom:18px;
 	padding-top:18px; 
 	padding-right:20px;
@@ -21,14 +21,25 @@ a > .text-primary:hover{
 
 .jumbotron.inner{
 	background-color: #BCCAD4;
-	font-size:36px;
 	margin: 0;
 	padding-bottom: 28px;
 	padding-top: 28px;
 	color: #31708f;
 }
 
+.jumbotron.inner.index{
+  font-size: 36px;
+}
+
+
 .jumbotron.inner:hover{
 	background-color: #64839A;
 	color: white;
 }
+
+ .jumbotron.inner.force-padding{
+  padding-right:20px;
+  padding-left: 20px;
+ }
+
+
