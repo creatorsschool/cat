@@ -88,7 +88,7 @@ post "/projects" do
 	project = Project.create(name: params[:name])
 	skills = params[:skills]
 	skills.each do |skill|
-		Requirement.create(skill_id: skill, project_id: project)
+		ProjectSkill.create(skill_id: skill, project_id: project)
 	end
 
 	redirect "/project/create"
