@@ -1,0 +1,19 @@
+<h1>New Project</h1>
+
+<form method="POST" action="/projects">
+	<label for="name">Name</label>
+	<input id="name" name="name">
+	<h2>Skills</h2>
+	<div>
+		<% @skills.each do |skill| %>
+			<label><%= skill.name %></label>
+			<input type="checkbox" name="skills[]" value="<%= skill.id %>">
+		<% end %>
+	</div>
+	<button>Submit</button>
+</form>
+<form method="POST" action="/skills">
+	<label for="skill">New skill</label>
+	<input id="skill" name="skill">
+	<button>Add</button>
+</form>
