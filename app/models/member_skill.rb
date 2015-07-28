@@ -1,4 +1,4 @@
 class MemberSkill < ActiveRecord::Base
-	belongs_to :members 
-	belongs_to :skills 
+	belongs_to :member
+	belongs_to :skill 
 end
