@@ -3,7 +3,7 @@ class CreateProject < ActiveRecord::Migration
     create_table :projects do |t|
       t.string :name
       t.string :description
-      t.datetime :begining
+      t.datetime :beginning
       t.integer :duration
     end
   end

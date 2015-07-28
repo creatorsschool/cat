@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728154228) do
+
+ActiveRecord::Schema.define(version: 20150728155415) do
+
 
   create_table "member_skills", force: :cascade do |t|
     t.integer "member_id"
