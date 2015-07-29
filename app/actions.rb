@@ -74,12 +74,26 @@ get "/project/create" do
 end
 
 post "/members" do
-	member = Member.create(name: params[:name])
-	skills = params[:skills]
-	skills.each do |skill|
-		MemberSkill.create(skill_id: skill, member_id: member.id )
-	end
+	#check if available
+	available = if params[:available] == "on" then true else false end
+	#check if dayshift is day
+	dayshift = if params[:dayshift] == "day" then true else false end
+	#creates member/skill/memberskill only if skills are selected
+	if params[:skills]
+		skills = params[:skills]
+		member = Member.create(
+			name: params[:name],
+			email: params[:email],
+			dayshift: dayshift,
+			availability: available
+		)
+		skills.each do |skill|
+			MemberSkill.create(skill_id: skill, member_id: member.id )
+		end
+	else
+		flash[:error] = "Sorry, you need to select skills"
 
+	end
 	redirect "/member/create"
 end
 

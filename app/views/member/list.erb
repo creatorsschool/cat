@@ -14,7 +14,6 @@
 
 <div class="form-group has-error">
   <label class="control-label" for="inputError1"><%= flash[:error] %></label>
-  
 </div>
 
 <% @members.each do |member| %>
@@ -24,6 +23,8 @@
    <li class="list-group-item">
 		<ul>
 			<li><label>Name:</label><%=member.name%></li>
+      <li><label>Email:</label><%=member.email%></li>
+      <li><label>Available:</label><%=member.status%></li>
 
 			<a href="/member/<%=member.id%>/remove"><span class="badge">Remove</span></a>
 		</ul>
