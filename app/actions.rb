@@ -104,7 +104,7 @@ post "/projects" do
 	skills = params[:skills]
 	@members_filter = skills.map do |skill|
 		ProjectSkill.create(skill_id: skill, project_id: project)
-		Skill.find(skill).members
+		Skill.find(skill).members 
 	end
 
 	@skills = Skill.all
