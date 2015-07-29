@@ -3,6 +3,17 @@
 <form method="POST" action="/members">
 	<label for="name">Name</label>
 	<input id="name" name="name">
+	<label for="email">Email</label>
+	<input id="email" name="email">
+	<label>dayshift</label>
+	<select name="dayshift">
+		<option value="day">day</option>
+		<option value="night">night</option>
+	</select>
+	<label for="available">Available</label>
+	<input id="available" type="checkbox" name="available">
+
+
 	<h2>Skills</h2>
 	<div>
 		<% @skills.each do |skill| %>
@@ -11,6 +22,12 @@
 		<% end %>
 	</div>
 	<button>Submit</button>
+	
+	<div class="form-group has-error">
+	  <label class="control-label" for="inputError1"><%= flash[:error] %></label>
+	</div>
+
+
 </form>
 <form method="POST" action="/skills">
 	<label for="skill">New skill</label>

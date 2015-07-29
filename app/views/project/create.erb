@@ -3,6 +3,13 @@
 <form method="POST" action="/projects">
 	<label for="name">Name</label>
 	<input id="name" name="name">
+	<label for="description">Description</label>
+	<input id="" name="name">
+	<label for="beginning">Date</label>
+	<input id="beginning" type="date" name="beginning">
+	<label for="duration">Duration</label>
+	<input id="duration" name="duration">
+
 	<h2>Skills</h2>
 	<div>
 		<% @skills.each do |skill| %>
@@ -11,9 +18,3 @@
 		<% end %>
 	</div>
 	<button>Submit</button>
-</form>
-<form method="POST" action="/skills">
-	<label for="skill">New skill</label>
-	<input id="skill" name="skill">
-	<button>Add</button>
-</form>
