@@ -4,7 +4,7 @@
 	<label for="name">Name</label>
 	<input id="name" name="name">
 	<label for="description">Description</label>
-	<input id="" name="name">
+	<input id="description" name="description">
 	<label for="beginning">Date</label>
 	<input id="beginning" type="date" name="beginning">
 	<label for="duration">Duration</label>
@@ -18,3 +18,22 @@
 		<% end %>
 	</div>
 	<button>Submit</button>
+</form>
+
+<h2>Members</h2>
+<%if @members_filter%>
+	<div>
+		<% @members_filter.each do |members| %>
+			<%members.each do |member|%>
+				<label><%=member.name%></label>
+			<% end %>
+		<% end %>
+	</div>
+<%end%>
+
+<h2>Project Details</h2>
+<%if @show%>
+	<div>
+		<%=@show.name%>
+	</div>
+<%end%>
