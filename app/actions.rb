@@ -84,7 +84,7 @@ post "/members" do
 end
 
 post "/projects" do 
-	project = Project.create(name: params[:name])
+	project = Project.create(name: params[:name], description: params[:descritpion], beginning: params[:beginning], duration: params[:duration])
 	skills = params[:skills]
 	skills.each do |skill|
 		ProjectSkill.create(skill_id: skill, project_id: project)
