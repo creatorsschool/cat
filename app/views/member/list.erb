@@ -24,7 +24,13 @@
 		<ul>
 			<li><label>Name:</label><%=member.name%></li>
       <li><label>Email:</label><%=member.email%></li>
-      <li><label>Available:</label><%=member.status%></li>
+      <li><label>Available:</label><%=member.availability%></li>
+      <li><label>Working hours:</label><%=member.dayshift%></li>
+      <li><label>Skills: </label>
+            <% member.skills.each do |skill| %>
+                <%=skill.name%>
+            <% end %>
+      </li>
 
 			<a href="/member/<%=member.id%>/remove"><span class="badge">Remove</span></a>
 		</ul>
