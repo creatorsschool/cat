@@ -107,7 +107,12 @@ post "/projects" do
 	redirect "/project/create"
 end
 
-post "/skills" do 
+post "/member/skills" do 
 	Skill.create(name: params[:skill])
 	redirect "/member/create"
+end
+
+post "/project/skills" do 
+	Skill.create(name: params[:skill])
+	redirect "/project/create"
 end
