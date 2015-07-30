@@ -18,28 +18,24 @@
 			<input type="checkbox" name="skills[]" value="<%= skill.id %>">
 		<% end %>
 	</div>
-	<button>Submit</button>
+	<button><a href ="/projects/skills">Search</a></button>
+
+
+	<h2>Members</h2>
+	<%if @members_filter%>
+		<div>
+			<% @members_filter.each do |members| %>
+				<%members.each do |member|%>
+					<label><%=member.name%></label>
+				<% end %>
+			<% end %>
+		</div>
+	<%end%>
+	<button type="submit">Create project</button>
 </form>
 
-<h2>Members</h2>
-<%if @members_filter%>
-	<div>
-		<% @members_filter.each do |members| %>
-			<%members.each do |member|%>
-				<label><%=member.name%></label>
-			<% end %>
-		<% end %>
-	</div>
-<%end%>
 
 
 
 
-
-<h2>Project Details</h2>
-<%if @show%>
-	<div>
-		<%=@show.name%>
-	</div>
-<%end%>
 

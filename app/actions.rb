@@ -99,20 +99,24 @@ post "/members" do
 end
 
 post "/projects" do 
-	project = Project.create(name: params[:name], description: params[:descritpion], beginning: params[:beginning], duration: params[:duration])
-	@show = Project.last
+	Project.create(name: params[:name], description: params[:descritpion], beginning: params[:beginning], duration: params[:duration])
+	redirect "/project/list"
+end
+
+get "/projects/skills" do
 	skills = params[:skills]
 	@members_filter = skills.map do |skill|
 		ProjectSkill.create(skill_id: skill, project_id: project)
 		Skill.find(skill).members 
 	end
-
-	@skills = Skill.all
 	@project = Project.all
+	@skills = Skill.all
 	erb :"/project/create"
 end
+
 
 post "skills" do 
 	Skill.create(name: params[:skill])
 	redirect "/member/create"
 end
+
