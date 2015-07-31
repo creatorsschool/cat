@@ -1,0 +1,24 @@
+/* The animation code */
+@keyframes cat {
+    0%   {left:0px; top:0px;}
+    100% {transform: rotate(1440deg); left:0px; top:0px;}
+}
+/* The element to apply the animation to */
+img {
+    position: relative;
+    animation-name: cat;
+    animation-duration: 0.8s;
+    animation-delay:1s;
+}
+
+@keyframes main {
+    0%   {opacity: 0; left:1000px; top:0px;}
+    100% {left:0px; top:0px;}
+}
+/* The element to apply the animation to */
+.yield_class {
+    position: relative;
+    animation-name: main;
+    animation-duration: 0.8s;
+
+}
