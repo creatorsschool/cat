@@ -1,0 +1,41 @@
+<h1>New Project</h1>
+
+<form method="POST" action="/projects">
+	<label for="name">Name</label>
+	<input id="name" name="name">
+	<label for="description">Description</label>
+	<input id="description" name="description">
+
+	<label for="beginning">Date</label>
+	<input id="beginning" type="date" name="beginning">
+	<label for="duration">Duration</label>
+	<input id="duration" name="duration">
+
+	<h2>Skills</h2>
+	<div>
+		<% @skills.each do |skill| %>
+			<label><%= skill.name %></label>
+			<input type="checkbox" name="skills[]" value="<%= skill.id %>">
+		<% end %>
+	</div>
+	<button><a href ="/projects/skills">Search</a></button>
+
+
+	<h2>Members</h2>
+	<%if @members_filter%>
+		<div>
+			<% @members_filter.each do |members| %>
+				<%members.each do |member|%>
+					<label><%=member.name%></label>
+				<% end %>
+			<% end %>
+		</div>
+	<%end%>
+	<button type="submit">Create project</button>
+</form>
+
+
+
+
+
+
