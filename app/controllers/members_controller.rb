@@ -1,5 +1,6 @@
 class MembersController < ApplicationController
   def index
+<<<<<<< HEAD
     @members = Member.all
     @skills = Skill.all
   end
@@ -67,5 +68,8 @@ class MembersController < ApplicationController
 
   def member_params
     params.require(:member).permit(:name, :dayshift, :availability, :email, :project_id)
+=======
+    
+>>>>>>> pm-cat-on-rails
   end
 end
