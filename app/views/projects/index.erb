@@ -1,0 +1,13 @@
+<div class="section teal lighten-4">
+  <h1 class="center-align">Projects List</h1>
+</div>
+<div class="section"></div>
+<div class="container">
+  <div class="row">
+    <div class="collection">
+      <% @projects.each do |project|%>
+        <%= link_to project.name , project_path(project.id), class: "collection-item" %>    
+      <% end %>  
+    </dic>
+  </div>
+</div>

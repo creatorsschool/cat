@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @porjects = Project.all
+    @projects = Project.all
     @skills = Skill.all
   end
 
@@ -13,12 +13,11 @@ class ProjectsController < ApplicationController
 
     @project = Project.create(project_params)
     skill_ids = params[:project][:skill_ids]
-    binding.pry
+    
     @project.skills << Skill.where(id: skill_ids)
     # Skill.where(id: skill_ids).each do |skill|
     #   skill.projects << @project
     # end
-   
     redirect_to project_select_members_path(@project.id)
   end
 
@@ -33,8 +32,7 @@ class ProjectsController < ApplicationController
   def update_members 
   
     member_ids = params[:project][:member_ids]
-    Member.where(id: member_ids).each do |member|
-      binding.pry   
+    Member.where(id: member_ids).each do |member|  
       member.update(project: @project)
       #member.porject_id = @project.id
       #member.save
