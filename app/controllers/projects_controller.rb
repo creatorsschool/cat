@@ -51,6 +51,8 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @skills = Skill.all
+    @members = @project.members
+    binding.pry
   end
 
   def destroy
