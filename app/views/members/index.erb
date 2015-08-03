@@ -1,18 +1,58 @@
-<div class="container">
-  <div class="row text-center">
-    <h1>Member Page</h1>
-  </div>
-  <div class="row">
-    <div class="col-md-3">
-      <div class="jumbotron main menu">
-        <a href="/member/create">
-          <div class="jumbotron inner text-center force-padding"><small>Create Member</small></div>
-        </a>      
-      </div>
-      <div class="jumbotron main menu">
-        <a href="/member/list">
-          <div class="jumbotron inner text-center force-padding"><small>List Member</small></div>
-        </a>      
-      </div>   
-  </div>
+
+<div class="nav-wrapper">
+  <%= form_tag(search_members_path, method: "get") do %>
+    <%= label_tag(:name, "Search for:") %>
+    <%= text_field_tag(:name) %>
+    <%= submit_tag("Search") %>
+  <% end %>
 </div>
+
+
+<div>
+  <%= flash[:error] %>
+</div>
+
+<ul>
+  <% @members.each do |member| %>
+    <li class="card small">
+      <div class="member-attribute">
+        <p>Name:</p>
+        <p><%=member.name%></p>
+      </div>
+
+      <div class="member-attribute">
+        <p>Email:</p>
+        <p><%=member.email%></p>
+      </div>
+
+      <div class="member-attribute">
+        <p>Available:</p>
+        <p><%=member.availability%></p>
+      </div>
+
+      <div class="member-attribute">
+        <p>Working hours:</p>
+        <p><%=member.dayshift%></p>
+      </div>
+
+      <div class="member-attribute">
+        <p>Skills:</p>
+        <ul>
+          <% member.skills.each do |skill| %>
+            <li><%=skill.name%></li>
+          <% end %>
+        </ul>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+
+
+
+
+
+
+
+
+      

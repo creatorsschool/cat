@@ -2,3 +2,6 @@
  *= require_tree . 
  *= require_self
  */
+.nav-wrapper {
+  background-color: yellow;
+}
