@@ -16,7 +16,7 @@ img {
     100% {left:0px; top:0px;}
 }
 /* The element to apply the animation to */
-.yield_class {
+.yield {
     position: relative;
     animation-name: main;
     animation-duration: 0.8s;
