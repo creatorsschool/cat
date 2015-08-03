@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
+  get 'about', to: 'home#about'
+  get 'home', to: 'home#index'
+
   get '/projects/search', to: 'projects#search', as: :search_projects
   get '/members/search', to: 'members#search', as: :search_members
   
@@ -38,3 +41,15 @@ end
 #        search_projects GET    /projects/search(.:format)                     projects#search
 #         search_members GET    /members/search(.:format)                      members#search
 
+#Password and login
+#     passwords POST   /passwords(.:format)                           clearance/passwords#create
+#          new_password GET    /passwords/new(.:format)                       clearance/passwords#new
+#               session POST   /session(.:format)                             clearance/sessions#create
+#         user_password POST   /users/:user_id/password(.:format)             clearance/passwords#create
+#    edit_user_password GET    /users/:user_id/password/edit(.:format)        clearance/passwords#edit
+#                       PATCH  /users/:user_id/password(.:format)             clearance/passwords#update
+#                       PUT    /users/:user_id/password(.:format)             clearance/passwords#update
+#                 users POST   /users(.:format)                               clearance/users#create
+#               sign_in GET    /sign_in(.:format)                             clearance/sessions#new
+#              sign_out DELETE /sign_out(.:format)                            clearance/sessions#destroy
+#               sign_up GET    /sign_up(.:format)                             clearance/users#new
