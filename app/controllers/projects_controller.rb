@@ -10,7 +10,6 @@ class ProjectsController < ApplicationController
   end
 
   def create
-
     @project = Project.create(project_params)
     skill_ids = params[:project][:skill_ids]
     
@@ -29,8 +28,7 @@ class ProjectsController < ApplicationController
     render "select_members"
   end
 
-  def update_members 
-  
+  def update_members   
     member_ids = params[:project][:member_ids]
     Member.where(id: member_ids).each do |member|  
       member.update(project: @project)
@@ -57,6 +55,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     Project.find(params[:id]).destroy
+    redirect_to projects_path
   end
 
   def search
