@@ -1,0 +1,27 @@
+<div class="section teal lighten-4">
+  <h1 class="center-align">New Project</h1>
+</div>
+<div class="section"></div>
+<div class="container">
+  <div class="row">
+    <blockquote>
+      <p><label>Name:</label><%= @project.name %></p>
+      <p><label>Description:</label><%= @project.description %></p>
+    </blockquote>
+  </div>
+  <div class="row">
+    <%= form_for @project, url: project_update_members_path(@project), method: :put do |f| %>
+      <div class="row">
+        <%= collection_check_boxes(:project,:member_ids,Member.all,:id,:name) do |b|%>  
+          <div class="col s3">
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+       <div class="row center-align">
+        <%= f.submit "Create", class: "btn"%> 
+      </div> 
+    <% end %>
+  </div>
+</div>

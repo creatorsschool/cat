@@ -12,19 +12,25 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
-          
+        <div class="input-field col s12">          
           <%= f.text_area :description, class: "materialize-textarea" %>
           <%= f.label :description,"Description"  %>
         </div>
       </div>
       <div class="row">
-        <% @skills.each do |skill| %>     
+      <%= collection_check_boxes(:project, :skill_ids, Skill.all, :id, :name) do |b| %>
+        <div class="col s3">
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
+      <% end %>
+         
+        <!--<% @skills.each do |skill| %>     
           <div class="col s3">
             <%= check_box_tag "skill_ids[]", skill.id, false, :id => "skill_id_#{skill.id}"%> 
-            <%= label_tag "skill_id_#{skill.id}", skill.name %>      
+            <%= label_tag "skill_id_#{skill.id}", skill.name %>     
           </div>      
-        <% end %> 
+        <% end %> --> 
       </div>
       <div class="row center-align">
         <%= f.submit "Search", class: "btn"%> 
@@ -32,3 +38,4 @@
    <% end %>
   </div>
 </div>
+

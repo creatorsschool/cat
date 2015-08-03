@@ -10,29 +10,37 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.create(name: params[:name], description: params[:descritpion], beginning: params[:beginning], duration: params[:duration])
-    skills = params[:skills]
-    skills.each do |skill|
-      ProjectSkill.create(skill_id: skill, project_id: @project.id)
-      #Skill.find(skill).members 
-    end
-    #@skills = Skill.all
 
-    redirect_to project_select_members_path
+    @project = Project.create(project_params)
+    skill_ids = params[:project][:skill_ids]
+    binding.pry
+    @project.skills << Skill.where(id: skill_ids)
+    # Skill.where(id: skill_ids).each do |skill|
+    #   skill.projects << @project
+    # end
+   
+    redirect_to project_select_members_path(@project.id)
   end
 
-  def select_members
+  def select_members   
     @project = Project.find(params[:project_id])
     @members_filter = MemberSkill.where(skill: @project.skills).map do |member_skill|
       member_skill.member
     end
+    render "select_members"
   end
 
-  def update_members
-    members = params[:member_ids]
-    members.each do |member_id|
-      Member.find(member_id).update project_id: params[:project_id]
+  def update_members 
+  
+    member_ids = params[:project][:member_ids]
+    Member.where(id: member_ids).each do |member|
+      binding.pry   
+      member.update(project: @project)
+      #member.porject_id = @project.id
+      #member.save
     end
+    
+    redirect_to projects_path
   end
 
   def edit
@@ -72,7 +80,12 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:member).permit(:name, :descritpion, :beginning, :duration)
+    params.require(:project).permit(:name, :description)
+    # same as:
+    #name: params[:project][:name], 
+    #description: params[:descritpion], 
+    #beginning: params[:beginning], 
+    #duration: params[:duration]
   end
 
 end

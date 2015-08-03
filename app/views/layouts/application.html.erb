@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>C A T</title>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
  
 <body>
-
+  <nav>
+     <div class="nav-wrapper">
+       <a href="/" ><img class ="brand-logo" height ="40" width="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Black_Cat_Vector.svg/2000px-Black_Cat_Vector.svg.png"/></a>
+       <ul id="nav-mobile" class="right hide-on-med-and-down">
+         <li class="active">
+         <li><a href="/">Sign in</a></li>
+         <li><a href="/">About</a></li>
+       </ul>
+     </div>
+   </nav>
       <%= yield %>
-
-    </div>
 
 </body>
 </html>
