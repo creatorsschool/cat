@@ -1,7 +1,6 @@
 class MembersController < ApplicationController
   def index
     @members = Member.all
-    @skills = Skill.all
   end
 
   def new
@@ -57,7 +56,7 @@ class MembersController < ApplicationController
     if @members == []
       flash[:error] = "Sorry no matches found for your search"          
     end
-    redirect_to members_path  
+    render 'index'
   end
 
   def show
