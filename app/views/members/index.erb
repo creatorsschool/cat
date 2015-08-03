@@ -1,10 +1,16 @@
+<%= link_to "Add Members", new_member_path %>  
 
-<div class="nav-wrapper">
+<div class="row">
+  <form class="col s12">
+  <div class= "row">
   <%= form_tag(search_members_path, method: "get") do %>
-    <%= label_tag(:name, "Search for:") %>
+    <div class="input-field col s6">
+    <%= label_tag(:name, "Search member:") %>
     <%= text_field_tag(:name) %>
-    <%= submit_tag("Search") %>
+     <%= submit_tag("Search", class: "btn") %>
   <% end %>
+  </div>
+  </div>
 </div>
 
 
@@ -32,7 +38,7 @@
 
       <div class="member-attribute">
         <p>Working hours:</p>
-        <p><%=member.dayshift%></p>
+        <p><%=member.working_hours%></p>
       </div>
 
       <div class="member-attribute">

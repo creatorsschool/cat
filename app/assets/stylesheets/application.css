@@ -1,7 +1,7 @@
 /*
- *= require_tree . 
- *= require_self
+ *= require materialize
+ *= require reset
+ *= require theme
+ *= require animation
+ *= require forms
  */
-.nav-wrapper {
-  background-color: yellow;
-}
