@@ -1,16 +1,36 @@
-<div class="section teal lighten-4">
-  <h1 class="center-align">New Project</h1>
-</div>
+<%= render "shared/page_title", title: "New Project" %>
+
 <div class="section"></div>
 <div class="container">
   <div class="row">
-    <blockquote>
-      <p><label>Name:</label><%= @project.name %></p>
-      <p><label>Description:</label><%= @project.description %></p>
-    </blockquote>
+    <%= form_for @project, class: "col s12" do |f| %>
+        <div class="row">
+          <div class="input-field col s6">          
+            <%= f.text_field :name, disabled: true %>
+            <%= f.label :name,"Name"  %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">          
+            <%= f.text_area :description, disabled: true,class: "materialize-textarea" %>
+            <%= f.label :description,"Description"  %>
+          </div>
+        </div>
+        <%= f.label "Skills"  %>
+        <div class="row">
+        <%= collection_check_boxes(:project, :skill_ids, Skill.all, :id, :name) do |b| %>
+          <div class="col s3">
+            <%= b.check_box(disabled: "disabled") %>
+            <%= b.label %>
+          </div>
+        <% end %>                 
+      </div> 
+     <% end %>
   </div>
+
   <div class="row">
     <%= form_for @project, url: project_update_members_path(@project), method: :put do |f| %>
+    <%= f.label "Members" %>
       <div class="row">
         <%= collection_check_boxes(:project,:member_ids,Member.all,:id,:name) do |b|%>  
           <div class="col s3">

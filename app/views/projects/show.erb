@@ -1,6 +1,5 @@
-<div class="section teal lighten-4">
-  <h1 class="center-align"><%= @project.name %></h1>
-</div>
+<%= render "shared/page_title", title: @project.name %>
+
 <div class="row">
   <div class="col s12 m6 offset-m3">
       <p class="flow-text"><%= @project.description %></p>

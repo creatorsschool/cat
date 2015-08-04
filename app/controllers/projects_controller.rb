@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
       #member.porject_id = @project.id
       #member.save
     end
-    
+    binding.pry
     redirect_to projects_path
   end
 
