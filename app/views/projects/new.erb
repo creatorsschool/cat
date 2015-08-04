@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 <%= render "shared/page_title", title: "New Project" %>
 
 <div class="section"></div>
 <div class="container">
   <div class="row">
+=======
+<div class="section teal lighten-4">
+ <h1 class="center-align">New Project</h1>
+</div>
+<div class="section"></div>
+<div class="container">
+ <div class="row">
+>>>>>>> b993fdaeb28fa23b1d005fa795287e87b5dd8a33
     <%= form_for @project, class: "col s12" do |f| %>
       <div class="row">
         <div class="input-field col s6">          
@@ -11,23 +20,41 @@
         </div>
       </div>
       <div class="row">
+<<<<<<< HEAD
         <div class="input-field col s12">          
+=======
+        <div class="input-field col s12">
+          
+>>>>>>> b993fdaeb28fa23b1d005fa795287e87b5dd8a33
           <%= f.text_area :description, class: "materialize-textarea" %>
           <%= f.label :description,"Description"  %>
         </div>
       </div>
       <div class="row">
+<<<<<<< HEAD
       <%= collection_check_boxes(:project, :skill_ids, Skill.all, :id, :name) do |b| %>
         <div class="col s3">
           <%= b.check_box %>
           <%= b.label %>
         </div>
       <% end %>                 
+=======
+        <% @skills.each do |skill| %>     
+          <div class="col s3">
+            <%= check_box_tag "skill_ids[]", skill.id, false, :id => "skill_id_#{skill.id}"%> 
+            <%= label_tag "skill_id_#{skill.id}", skill.name %>      
+          </div>      
+        <% end %> 
+>>>>>>> b993fdaeb28fa23b1d005fa795287e87b5dd8a33
       </div>
       <div class="row center-align">
         <%= f.submit "Search", class: "btn"%> 
       </div> 
    <% end %>
   </div>
+<<<<<<< HEAD
 </div>
 
+=======
+</div> 
+>>>>>>> b993fdaeb28fa23b1d005fa795287e87b5dd8a33

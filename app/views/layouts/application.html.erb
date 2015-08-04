@@ -5,9 +5,11 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
  
 <body>
+<<<<<<< HEAD
   <nav>
      <div class="nav-wrapper">
        <a href="/" ><img class ="brand-logo" height ="40" width="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Black_Cat_Vector.svg/2000px-Black_Cat_Vector.svg.png"/></a>
@@ -19,6 +21,48 @@
      </div>
   </nav>
   <%= yield %>
+=======
 
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" ><img class ="brand-logo-left" height ="60" width="60" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Black_Cat_Vector.svg/2000px-Black_Cat_Vector.svg.png"/></a>
+
+      <ul id="nav-mobile" class="right">
+
+        <li id="header">
+          <!-- Shows a link to about if not signed in -->
+          <% if signed_out? -%>
+            <%= link_to t("about"), about_path %>
+          <% end -%>
+        </li>
+
+        <li id="header">
+          <%= link_to t("home"), home_path %>
+        </li>
+        
+        <li id="header">
+          <!-- Changes button sign_in to sign_out and vice-versa-->
+          <% if signed_in? -%>
+            <%= link_to t(".sign_out"), sign_out_path, method: :delete %>
+          <% else -%>
+            <%= link_to t(".sign_in"), sign_in_path %>
+          <% end -%>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <div id="flash">
+    <% flash.each do |key, value| -%>
+      <div id="flash_<%= key %>"><%=h value %></div>
+    <% end %>
+  </div>
+>>>>>>> b993fdaeb28fa23b1d005fa795287e87b5dd8a33
+
+  <div class="yield">
+    <%= yield %>
+  </div>
+        
 </body>
 </html>

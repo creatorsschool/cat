@@ -22,3 +22,8 @@ gem 'pry'
 #Debugger
 gem 'font-awesome-sass'
 #Founts Awsome for Incons
+gem 'clearance'
+# Authentication gem for login
+
+gem 'pry'
+gem 'font-awesome-sass'

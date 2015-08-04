@@ -37,8 +37,20 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.2)
+    bcrypt (3.1.10)
     builder (3.2.2)
+<<<<<<< HEAD
     coderay (1.1.0)
+=======
+<<<<<<< HEAD
+    clearance (1.10.1)
+      bcrypt
+      email_validator (~> 1.4)
+      rails (>= 3.1)
+=======
+    coderay (1.1.0)
+>>>>>>> pm-create-members
+>>>>>>> b993fdaeb28fa23b1d005fa795287e87b5dd8a33
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -46,6 +58,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    email_validator (1.6.0)
+      activemodel
     erubis (2.7.0)
     execjs (2.5.2)
     font-awesome-sass (4.3.2.1)
@@ -130,6 +144,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  clearance
   coffee-rails (~> 4.1.0)
   font-awesome-sass
   jquery-rails
@@ -139,3 +154,6 @@ DEPENDENCIES
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
+
+BUNDLED WITH
+   1.10.5

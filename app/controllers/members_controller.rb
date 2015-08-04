@@ -1,7 +1,8 @@
 class MembersController < ApplicationController
+  before_action :require_login
+
   def index
     @members = Member.all
-    @skills = Skill.all
   end
 
   def new
@@ -10,25 +11,14 @@ class MembersController < ApplicationController
   end
 
   def create
-    #check if available
-    available = if params[:available] == "on" then true else false end
-    #check if dayshift is day
-    dayshift = if params[:dayshift] == "day" then true else false end
-    #creates member/skill/memberskill only if skills are selected
-    if params[:skills]
-      skills = params[:skills]
-      member = Member.create(
-        name: params[:name],
-        email: params[:email],
-        dayshift: dayshift,
-        availability: available
-      )
-      skills.each do |skill|
-        MemberSkill.create(skill_id: skill, member_id: member.id )
-      end
-    else
-      flash[:error] = "Sorry, you need to select skills"
+    @member = Member.new(member_params)
+
+    if @member.save
       redirect_to members_path
+    else
+      @skills = Skill.all
+      flash[:error] = "Sorry, you need to select skills"
+      render :new
     end
   end
 
@@ -57,7 +47,7 @@ class MembersController < ApplicationController
     if @members == []
       flash[:error] = "Sorry no matches found for your search"          
     end
-    redirect_to members_path  
+    render 'index'
   end
 
   def show
@@ -66,6 +56,10 @@ class MembersController < ApplicationController
   private
 
   def member_params
-    params.require(:member).permit(:name, :dayshift, :availability, :email, :project_id)
+    dayshift = params[:member][:dayshift] == "day"
+    available = params[:member][:available] == "on"
+    params.require(:member)
+      .permit(:name, :email, :project_id, skill_ids: [])
+      .merge(dayshift: dayshift, availability: available)
   end
 end
