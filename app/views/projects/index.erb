@@ -1,0 +1,22 @@
+<%= render "shared/page_title", title: "Project List" %>
+
+<div class="section"></div>
+<div class="container">
+  <div class="row">
+    <ul class="collection">
+      <% @projects.each do |project|%>
+        <li class="collection-item">
+          <div>
+            <%= project.name %>             
+            <%= link_to project_path(project.id), method: :delete, class: "secondary-content" do%>
+                <i class="fa fa-times"></i>
+            <% end %>   
+            <%= link_to project_path(project.id), class: "secondary-content" do%>
+                <i class="fa fa-info-circle"></i>
+            <% end %>   
+          </div>          
+        </li>       
+      <% end %>  
+    </ul>
+  </div>
+</div>

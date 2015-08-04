@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root to: 'home#index'
+  
+  get '/projects/search', to: 'projects#search', as: :search_projects
+  get '/members/search', to: 'members#search', as: :search_members
 
   get 'about', to: 'home#about'
   get 'home', to: 'home#index'
@@ -15,8 +18,12 @@ Rails.application.routes.draw do
 
   #get '/projects/:id/select_members', to: 'projects#show_members', as: :projects_show_members
   #get '/projects/skills_submit', to: 'projects#skills_submit', as: :projects_skills_submit
+<<<<<<< HEAD
+  
+=======
 
 
+>>>>>>> b993fdaeb28fa23b1d005fa795287e87b5dd8a33
 end
 # # Prefix Verb   URI Pattern                                    Controller#Action
 #                   root GET    /                                              home#index

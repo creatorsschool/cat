@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @porjects = Project.all
+    @projects = Project.all
     @skills = Skill.all
   end
 
@@ -10,29 +10,33 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.create(name: params[:name], description: params[:descritpion], beginning: params[:beginning], duration: params[:duration])
-    skills = params[:skills]
-    skills.each do |skill|
-      ProjectSkill.create(skill_id: skill, project_id: @project.id)
-      #Skill.find(skill).members 
-    end
-    #@skills = Skill.all
-
-    redirect_to project_select_members_path
+    @project = Project.create(project_params)
+    skill_ids = params[:project][:skill_ids]
+    
+    @project.skills << Skill.where(id: skill_ids)
+    # Skill.where(id: skill_ids).each do |skill|
+    #   skill.projects << @project
+    # end
+    redirect_to project_select_members_path(@project.id)
   end
 
-  def select_members
+  def select_members   
     @project = Project.find(params[:project_id])
     @members_filter = MemberSkill.where(skill: @project.skills).map do |member_skill|
       member_skill.member
     end
+    render "select_members"
   end
 
-  def update_members
-    members = params[:member_ids]
-    members.each do |member_id|
-      Member.find(member_id).update project_id: params[:project_id]
+  def update_members   
+    member_ids = params[:project][:member_ids]
+    Member.where(id: member_ids).each do |member|  
+      member.update(project: @project)
+      #member.porject_id = @project.id
+      #member.save
     end
+    binding.pry
+    redirect_to projects_path
   end
 
   def edit
@@ -46,11 +50,13 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @skills = Skill.all
+    @skills = @project.skills
+    @members = @project.members
   end
 
   def destroy
     Project.find(params[:id]).destroy
+    redirect_to projects_path
   end
 
   def search
@@ -72,7 +78,12 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:member).permit(:name, :descritpion, :beginning, :duration)
+    params.require(:project).permit(:name, :description)
+    # same as:
+    #name: params[:project][:name], 
+    #description: params[:descritpion], 
+    #beginning: params[:beginning], 
+    #duration: params[:duration]
   end
 
 end
