@@ -20,3 +20,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'clearance'
 # Authentication gem for login
+
+gem 'pry'
+gem 'font-awesome-sass'
+
