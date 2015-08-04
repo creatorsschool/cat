@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/members/search', to: 'members#search', as: :search_members
 
   get 'about', to: 'home#about'
-  get 'home', to: 'home#index'
+  get '/', to: 'home#index'
 
   
   resources :members
