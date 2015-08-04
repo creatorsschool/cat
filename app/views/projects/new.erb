@@ -26,14 +26,14 @@
         <% end %>                 
       </div> 
       <div class="row center-align">
-        <%= link_to '#', class: "btn" do %> 
+        <%= link_to '#', class: "btn", id: "show-form" do %> 
           <i class="fa fa-search left"></i>Members
         <% end %>
       </div> 
      <% end %>
   </div>
 
-  <div class="">
+  <div class="member-select hide-form">
     <div class="row">
       <%= form_for @project, url: '#', method: :put do |f| %>
        <%= f.label "Members" %>
