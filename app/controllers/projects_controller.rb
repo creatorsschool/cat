@@ -1,15 +1,17 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    @projects = Project.where(state: "created")
     @skills = Skill.all
   end
 
   def new
     @project = Project.new
     @skills = Skill.all  
+    @members_filter = Member.all
   end
 
   def create
+    
     @project = Project.create(project_params)
     skill_ids = params[:project][:skill_ids]
     
@@ -17,25 +19,27 @@ class ProjectsController < ApplicationController
     # Skill.where(id: skill_ids).each do |skill|
     #   skill.projects << @project
     # end
+
     redirect_to project_select_members_path(@project.id)
+    
   end
 
-  def select_members   
+  def select_members  
     @project = Project.find(params[:project_id])
     @members_filter = MemberSkill.where(skill: @project.skills).map do |member_skill|
       member_skill.member
     end
-    render "select_members"
+    @members_filter = @members_filter.uniq { |x| x.name }
+    render json: {members: @members_filter, project: @project }
   end
 
   def update_members   
     member_ids = params[:project][:member_ids]
-    Member.where(id: member_ids).each do |member|  
-      member.update(project: @project)
+    Member.where(id: member_ids).update_all(project_id: params[:project_id])
       #member.porject_id = @project.id
-      #member.save
-    end
-    binding.pry
+      #member.save    
+    Project.find(params[:project_id]).update state: "created"
+    Project.where(state: nil).destroy_all    
     redirect_to projects_path
   end
 

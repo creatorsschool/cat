@@ -1,4 +1,8 @@
-<%= render "shared/page_title", title: "Project List" %>
+<%= render layout: "shared/page_title", locals: {title: "Project List"} do %>
+  <%= link_to new_project_path do %>
+    <i class="fa fa-plus-circle small icon-center"></i>
+  <% end %>
+<% end %>
 
 <div class="section"></div>
 <div class="container">
