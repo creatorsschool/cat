@@ -42,5 +42,6 @@ $(document).ready(function(){
       type: "PUT",
       url: '/projects/' + data.project.id + '/update_members'});*/
   });
-  
+
+  $('.modal-trigger').leanModal();
 });
