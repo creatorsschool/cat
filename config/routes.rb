@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  root to: 'home#index'
+  root to: 'home#about'
   
   get '/projects/search', to: 'projects#search', as: :search_projects
   get '/members/search', to: 'members#search', as: :search_members
 
-  get 'about', to: 'home#about'
-  get '/', to: 'home#index'
-
+  get '/home', to: 'home#index', as: :home
+  get '/sign_in', to: redirect('/'), as: :sign_in_redirect
   
   resources :members
   resources :projects do
