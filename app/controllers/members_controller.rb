@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_action :require_login
+  
 
   def index
     @members = Member.all
@@ -37,18 +37,7 @@ class MembersController < ApplicationController
     redirect_to members_path
   end
 
-  def search
-    if params[:name] && params[:name] != ""
-      @members = Member.where("name LIKE ?", "#{params[:name]}%")
-    else  
-      @members = Member.all
-    end
-
-    if @members == []
-      flash[:error] = "Sorry no matches found for your search"          
-    end
-    render 'index'
-  end
+  
 
   def show
   end

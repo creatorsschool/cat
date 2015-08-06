@@ -2,11 +2,10 @@ Rails.application.routes.draw do
   root to: 'home#index'
   
   get '/projects/search', to: 'projects#search', as: :search_projects
-  get '/members/search', to: 'members#search', as: :search_members
+  get '/members/search', to: 'search#search', as: :search_members
 
   get 'about', to: 'home#about'
   get 'home', to: 'home#index'
-
   
   resources :members
   resources :projects do
