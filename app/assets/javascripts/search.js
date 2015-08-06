@@ -19,7 +19,7 @@ $(function() {
                '<span class="working_hours">Working Hours:' + member.working_hours + '</span>' +
                '<div id="skillsList">' + memberSkills(member) +'</div>' +
                '</div>' +
-               '<img src="' + member.avatar + '" class="avatar"/>' + 
+               '<img src="' + member.avatar + '" class="profile-picture"/>' + 
              '</div>'
           );
         });

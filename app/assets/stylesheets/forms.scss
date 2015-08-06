@@ -7,6 +7,7 @@
   position:fixed;
   top: 63px;
   right:0;
+  width:500px;
   border-style:solid;
   background-color: #00838f;
   display: none;
@@ -14,11 +15,17 @@
 }
 
 .sign-form.sign-form-open {
-
   display: block;
 }
 
+
 .field_with_errors label {
   color: red;
+}
+
+
+.box {
+  width: 400px;
+  margin: auto;
 }
 
