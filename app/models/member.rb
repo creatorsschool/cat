@@ -3,6 +3,7 @@ class Member < ActiveRecord::Base
 	has_many :skills, through: :member_skills
   belongs_to :project
   mount_uploader :avatar, AvatarUploader
+  validates_presence_of :name, :email, :availability, :dayshift, :skills, :project
 
   def working_hours
     if dayshift
