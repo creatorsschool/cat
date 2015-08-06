@@ -12,13 +12,14 @@ $(function() {
         $('#membersList').html('');
         data.forEach(function(member) {
           $('#membersList').append(
-            '<div class="col s4 card">' +
-              '<i class="fa fa-picture-o circle">'+ member.avatar '</i>' +
+            '<div id="members-card" class="col s5 card">' + '<div class="member-attributes">' +
                '<span class="name">Name:'+ member.name + '</span>' +
                '<p><span class="email">E-mail:' + member.email + '</span><br>' +
-               (member.availability ? "Available" : "Unavailable") + '</p>' +
+               (member.availability ? "Available" : "Unavailable") + '</p>' + '<div class="availability-circle">' + '</div>' +
                '<span class="working_hours">Working Hours:' + member.working_hours + '</span>' +
                '<div id="skillsList">' + memberSkills(member) +'</div>' +
+               '</div>' +
+               '<img src="' + member.avatar + '" class="avatar"/>' + 
              '</div>'
           );
         });
