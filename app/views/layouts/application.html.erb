@@ -17,10 +17,7 @@
           <!-- Shows user email and home if signed in-->
         <% if signed_in? -%>
           <li id="header">
-            <%= link_to ("#{current_user.email}"), page_path %>
-          </li>
-          <li id="header">
-            <%= link_to ("Home"), home_path %>
+            <%= link_to ("#{current_user.email}"), home_path %>
           </li>
         <% else %>
           <li id="header">

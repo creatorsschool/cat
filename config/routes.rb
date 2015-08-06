@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   get '/home', to: 'home#index', as: :home
   get '/sign_in', to: redirect('/'), as: :sign_in_redirect
-  get '/user', to: 'home#page', as: :page
 
   resources :members
   resources :projects do
