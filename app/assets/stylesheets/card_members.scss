@@ -1,0 +1,23 @@
+
+#membercard-container {
+  width: 80%;
+  margin: auto;
+}
+
+#members-card {
+  height: 150px;
+}
+
+.availability-circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.member-available .availability-circle {
+  background-color: green;
+}
+
+.member-unavailable .availability-circle {
+  background-color: red;
+}
