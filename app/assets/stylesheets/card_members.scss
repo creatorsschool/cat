@@ -6,18 +6,39 @@
 
 #members-card {
   height: 150px;
+  display: flex;
 }
 
 .availability-circle {
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
+  margin-left: 70px;
+  margin-top: -18px;
 }
 
 .member-available .availability-circle {
-  background-color: green;
+  background-color: #00e676;
 }
 
 .member-unavailable .availability-circle {
-  background-color: red;
+  background-color: #b71c1c;
+  margin-left: 86px;
+  margin-top: -18px;
 }
+
+.avatar {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  margin-top: 20px;
+  
+}
+
+.member-attributes {
+  flex-grow: 1;
+  align-self: center;
+  font-family: times new roman;
+}
+
+
