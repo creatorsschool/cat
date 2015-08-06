@@ -11,9 +11,8 @@ class MembersController < ApplicationController
   end
 
   def create
-    @member = Member.new(member_params)
-
-    if @member.save
+    if params[:member][:skill_ids]
+      @member = Member.new(member_params).save
       redirect_to members_path
     else
       @skills = Skill.all
@@ -48,7 +47,7 @@ class MembersController < ApplicationController
     dayshift = params[:member][:dayshift] == "day"
     available = params[:member][:available] == "on"
     params.require(:member)
-      .permit(:name, :email, :project_id, skill_ids: [])
+      .permit(:name, :email, :avatar, :project_id, skill_ids: [])
       .merge(dayshift: dayshift, availability: available)
   end
 end

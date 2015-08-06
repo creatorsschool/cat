@@ -28,4 +28,7 @@ gem 'clearance'
 gem 'pry'
 gem 'font-awesome-sass'
 
+
+gem 'rmagick'
 gem 'carrierwave'
+

@@ -21,22 +21,24 @@
         <% else %>
           <div id="members-card" class="col s5 card">
         <% end %>
-          <i class="fa fa-picture-o circle"></i>
-          <p class="name">Name: <%= member.name %></p>
-          <p class="email">E-mail: <%=member.email%></p>
-          <div class="member-<%= member.availability_representation.downcase %>">
-            <%= member.availability_representation %>
-            <div class="availability-circle"></div>
+          <div class="member-attributes">
+            <p class="name">Name: <%= member.name %></p>
+            <p class="email">E-mail: <%=member.email%></p>
+            <div class="member-<%= member.availability_representation.downcase %>">
+              <%= member.availability_representation %>
+              <div class="availability-circle"></div>
+            </div>
+            <p class="working_hours">Working Hours: <%= member.working_hours %></p>
+            <div id="skillsList">
+              <p>
+                Skills:
+                <% member.skills.each do |skill| %>
+                  <%= skill.name %>
+                <% end %>
+              </p>
+            </div>
           </div>
-          <p class="working_hours">Working Hours: <%= member.working_hours %></p>
-          <div id="skillsList">
-            <p>
-              Skills:
-              <% member.skills.each do |skill| %>
-                <%= skill.name %>
-              <% end %>
-            </p>
-          </div>
+          <%= image_tag(member.avatar.url, class: "avatar") %>
         </div>
       <% end %>
     </div>

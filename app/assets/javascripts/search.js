@@ -13,7 +13,7 @@ $(function() {
         data.forEach(function(member) {
           $('#membersList').append(
             '<div class="col s4 card">' +
-              '<i class="fa fa-picture-o circle"></i>' +
+              '<i class="fa fa-picture-o circle">'+ member.avatar '</i>' +
                '<span class="name">Name:'+ member.name + '</span>' +
                '<p><span class="email">E-mail:' + member.email + '</span><br>' +
                (member.availability ? "Available" : "Unavailable") + '</p>' +
