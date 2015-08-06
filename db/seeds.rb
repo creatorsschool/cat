@@ -19,10 +19,10 @@ Member.create(name: "Patricia", dayshift: true, availability: true, email: "patr
 ];
 
 projects = [
-Project.create(name: "Creator School", description: "Become a super hero developer with us", duration:1),
-Project.create(name: "First job", description: "Create a super website with full database", duration:2),
-Project.create(name: "Job app", description: "Code like a zombie on rails developer", duration:4),
-Project.create(name: "Leg surgery", description: "Preparation for subjects leg surgery class", duration:3),
+Project.create(name: "Creator School", description: "Become a super hero developer with us", duration:1, state: "created"),
+Project.create(name: "First job", description: "Create a super website with full database", duration:2, state: "created"),
+Project.create(name: "Job app", description: "Code like a zombie on rails developer", duration:4, state: "created"),
+Project.create(name: "Leg surgery", description: "Preparation for subjects leg surgery class", duration:3,state: "created"),
 ];
 
 skills = [

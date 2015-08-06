@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20150805152604) do
+=======
 ActiveRecord::Schema.define(version: 20150805170713) do
+>>>>>>> 026b2d2e73d6fcda4325f97a01e3ecb86146886b
 
   create_table "member_skills", force: :cascade do |t|
     t.integer "member_id"
@@ -39,6 +43,7 @@ ActiveRecord::Schema.define(version: 20150805170713) do
     t.integer  "duration"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "state"
   end
 
   create_table "skills", force: :cascade do |t|
