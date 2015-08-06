@@ -1,5 +1,4 @@
 class MembersController < ApplicationController
-  
 
   def index
     @members = Member.all
@@ -11,8 +10,8 @@ class MembersController < ApplicationController
   end
 
   def create
-    if params[:member][:skill_ids]
-      @member = Member.new(member_params).save
+    @member = Member.new(member_params)
+    if @member.save
       redirect_to members_path
     else
       @skills = Skill.all

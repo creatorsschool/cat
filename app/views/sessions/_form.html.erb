@@ -3,33 +3,23 @@
       <%= form_for :session, url: session_path do |form| %>
 
         <div class="row">
-          <div class="input-field">
-            <%= form.label :email %>
-            <%= form.text_field :email, type: 'email' %>
-          </div>
+          <%= form.label :email %>
+          <%= form.text_field :email, type: 'email' %>
         </div>
 
-          <div class="row">
-            <div class="input-field">
-              <%= form.label :password %>
-              <%= form.password_field :password %>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="input-field col s6">
-              <%= form.submit "sign-in", class: "btn"%>
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="input-field col s6">
-              <p><%= link_to t(".forgot_password"), new_password_path %></p>
-              <p><b>Don't have an account?</b> Click <%= link_to t("here"), sign_up_path %></p>
-            </div>            
-          </div>
-
+        <div class="row">
+          <%= form.label :password %>
+          <%= form.password_field :password %>
         </div>
+
+        <div class="row">
+          <%= form.submit 'sign in', class: 'btn' %>
+        </div>
+        
+        <div>
+          <%= link_to t(".forgot_password"), new_password_path %>
+        </div>
+
       <% end %>
     </div>
   </div>

@@ -4,23 +4,21 @@
 }
 
 .sign-form {
-  position: fixed;
+  position:fixed;
   top: 63px;
-  right:0; 
-  border-style: solid;
-  width: 50%;
-  background-color: white;
+  right:0;
+  border-style:solid;
+  background-color: #00838f;
   display: none;
+  z-index: 10;
 }
 
 .sign-form.sign-form-open {
+
   display: block;
 }
 
-.member-available {
-
+.field_with_errors label {
+  color: red;
 }
 
-.member-unavailable {
-
-}
