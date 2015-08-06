@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   get '/home', to: 'home#index', as: :home
   get '/sign_in', to: redirect('/'), as: :sign_in_redirect
-  
+  get '/user', to: 'home#page', as: :page
+
   resources :members
   resources :projects do
     get :select_members
@@ -41,7 +42,7 @@ end
 #         search_members GET    /members/search(.:format)                      members#search
 
 #Password and login
-#     passwords POST   /passwords(.:format)                           clearance/passwords#create
+#             passwords POST   /passwords(.:format)                           clearance/passwords#create
 #          new_password GET    /passwords/new(.:format)                       clearance/passwords#new
 #               session POST   /session(.:format)                             clearance/sessions#create
 #         user_password POST   /users/:user_id/password(.:format)             clearance/passwords#create
