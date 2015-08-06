@@ -1,64 +1,46 @@
 <%= link_to "Add Members", new_member_path %>  
 
 <div class="row">
-  <form class="col s12">
-  <div class= "row">
-  <%= form_tag(search_members_path, method: "get") do %>
+  <%= form_tag(search_members_path, method: "get", id: "search-form") do %>
     <div class="input-field col s6">
-    <%= label_tag(:name, "Search member:") %>
-    <%= text_field_tag(:name) %>
-     <%= submit_tag("Search", class: "btn") %>
+      <%= label_tag(:name, "Search member:") %>
+      <%= text_field_tag(:name) %>
+      <%= submit_tag("Search", class: "btn") %>
+    </div>
   <% end %>
-  </div>
-  </div>
 </div>
 
+<div id="search-error"></div>
 
-<div>
-  <%= flash[:error] %>
+<div id="membercard-container" class="container">
+  <div class= "row">
+    <div id="membersList">
+      <% @members.each_with_index do |member, index| %>
+        <% if index.odd? %>
+          <div id="members-card" class="col s5 offset-s2 card">
+        <% else %>
+          <div id="members-card" class="col s5 card">
+        <% end %>
+          <div class="member-attributes">
+            <p class="name">Name: <%= member.name %></p>
+            <p class="email">E-mail: <%=member.email%></p>
+            <div class="member-<%= member.availability_representation.downcase %>">
+              <%= member.availability_representation %>
+              <div class="availability-circle"></div>
+            </div>
+            <p class="working_hours">Working Hours: <%= member.working_hours %></p>
+            <div id="skillsList">
+              <p>
+                Skills:
+                <% member.skills.each do |skill| %>
+                  <%= skill.name %>
+                <% end %>
+              </p>
+            </div>
+          </div>
+          <%= image_tag(member.avatar.url, class: "avatar") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<ul>
-  <% @members.each do |member| %>
-    <li class="card small">
-      <div class="member-attribute">
-        <p>Name:</p>
-        <p><%=member.name%></p>
-      </div>
-
-      <div class="member-attribute">
-        <p>Email:</p>
-        <p><%=member.email%></p>
-      </div>
-
-      <div class="member-attribute">
-        <p>Available:</p>
-        <p><%=member.availability%></p>
-      </div>
-
-      <div class="member-attribute">
-        <p>Working hours:</p>
-        <p><%=member.working_hours%></p>
-      </div>
-
-      <div class="member-attribute">
-        <p>Skills:</p>
-        <ul>
-          <% member.skills.each do |skill| %>
-            <li><%=skill.name%></li>
-          <% end %>
-        </ul>
-      </div>
-    </li>
-  <% end %>
-</ul>
-
-
-
-
-
-
-
-
-
-      

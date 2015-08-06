@@ -1,5 +1,4 @@
 class MembersController < ApplicationController
-  before_action :require_login
 
   def index
     @members = Member.all
@@ -11,9 +10,8 @@ class MembersController < ApplicationController
   end
 
   def create
-    @member = Member.new(member_params)
-
-    if @member.save
+    if params[:member][:skill_ids]
+      @member = Member.new(member_params).save
       redirect_to members_path
     else
       @skills = Skill.all
@@ -37,18 +35,7 @@ class MembersController < ApplicationController
     redirect_to members_path
   end
 
-  def search
-    if params[:name] && params[:name] != ""
-      @members = Member.where("name LIKE ?", "#{params[:name]}%")
-    else  
-      @members = Member.all
-    end
-
-    if @members == []
-      flash[:error] = "Sorry no matches found for your search"          
-    end
-    render 'index'
-  end
+  
 
   def show
   end
@@ -59,7 +46,7 @@ class MembersController < ApplicationController
     dayshift = params[:member][:dayshift] == "day"
     available = params[:member][:available] == "on"
     params.require(:member)
-      .permit(:name, :email, :project_id, skill_ids: [])
+      .permit(:name, :email, :avatar, :project_id, skill_ids: [])
       .merge(dayshift: dayshift, availability: available)
   end
 end

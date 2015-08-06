@@ -15,7 +15,6 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'pry'
 #Debugger
 gem 'font-awesome-sass'
@@ -23,8 +22,5 @@ gem 'font-awesome-sass'
 gem 'clearance'
 # Authentication gem for login
 
-gem 'pry'
-#Debugger
-
-gem 'font-awesome-sass'
-#icons library
+gem 'rmagick'
+gem 'carrierwave'

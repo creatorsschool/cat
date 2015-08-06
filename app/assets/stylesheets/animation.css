@@ -1,0 +1,11 @@
+/* The animation code */
+@keyframes cat {
+    100% {transform: rotate(1440deg); left:0px; top:0px;}
+}
+/* The element to apply the animation to */
+.brand-logo-left {
+    position: relative;
+    animation-name: cat;
+    animation-duration: 1.2s;
+    animation-delay: 0.5s;
+}

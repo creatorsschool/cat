@@ -2,40 +2,48 @@
 <html>
 <head>
 
+<<<<<<< HEAD
   <%= stylesheet_link_tag    'application', media: 'all' %>
+=======
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+>>>>>>> 026b2d2e73d6fcda4325f97a01e3ecb86146886b
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 
 </head>
  
 <body>
-
-  
-
-
   <nav>
     <div class="nav-wrapper">
       <a href="/" ><img class ="brand-logo-left" height ="60" width="60" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Black_Cat_Vector.svg/2000px-Black_Cat_Vector.svg.png"/></a>
 
-      <ul id="nav-mobile" class="right">
+      <ul class="right">
+          <!-- Shows user email and home if signed in-->
+        <% if signed_in? -%>
+          <li id="header">
+            <%= "| " + current_user.email + " |" %>
+          </li>
+          <li id="header">
+            <%= link_to ("Home"), home_path %>
+          </li>
+        <% else %>
+          <li id="header">
+            <%= link_to ("About"), root_path %>
+          </li>
+          <li id="header">
+            <%= link_to ("Sign up"), sign_up_path %>
+          </li>
+        <% end -%>
 
         <li id="header">
-          <!-- Shows a link to about if not signed in -->
-          <% if signed_out? -%>
-            <%= link_to t("about"), about_path %>
-          <% end -%>
-        </li>
-
-        <li id="header">
-          <%= link_to t("home"), home_path %>
-        </li>
-        
-        <li id="header">
-          <!-- Changes button sign_in to sign_out and vice-versa-->
+            <!-- Changes button sign_in to sign_out and vice-versa-->
           <% if signed_in? -%>
             <%= link_to t(".sign_out"), sign_out_path, method: :delete %>
           <% else -%>
-            <%= link_to t(".sign_in"), sign_in_path, id:"sign-in-button" %>
+          <a href="#" id="sign-in-button">Sign in</a>
+            <div class ="sign-form">
+              <%= render partial: '/sessions/form' %>
+            </div>
           <% end -%>
         </li>
 
@@ -46,10 +54,10 @@
   <div id="flash">
     <% flash.each do |key, value| -%>
       <div id="flash_<%= key %>"><%=h value %></div>
-    <% end %>
+    <% end -%>
   </div>
 
-  <div class="yield">
+  <div class="body-movement">
     <%= yield %>
   </div>
         
