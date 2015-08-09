@@ -13,7 +13,7 @@
 </div>
 <div class="row boxes">
   <div class="col s4 box" id="skills-div">
-     <ul class="collection with-header zero-margin">
+     <ul class="collection with-header zero-margin" id="projectskillsList">
      <li class="collection-header">
         <div class="anchor">
           <h4>Skills
@@ -26,7 +26,7 @@
         <li class="collection-item">
           <div>
             <%= skill.name %>             
-            <%= link_to "#", method: :delete, class: "secondary-content" do%>
+            <%= link_to project_skill_path(project_id: @project.id,id: skill.id), method: :delete, class: "secondary-content" do%>
                 <i class="fa fa-times"></i>
             <% end %>   
           </div>          

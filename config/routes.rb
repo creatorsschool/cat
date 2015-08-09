@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get :select_members
     put :update_members
     resources :members, only: [:new,:destroy], controller: 'projects/members'
+    resources :skills, only: [:new,:destroy], controller: 'projects/skills'
   end
 
   #get '/projects/:id/select_members', to: 'projects#show_members', as: :projects_show_members

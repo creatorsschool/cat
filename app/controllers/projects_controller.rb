@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   def index
     @projects = Project.where(state: "created")
+    Project.where(state: nil).each{ |project| project.destroy }
     @skills = Skill.all
   end
 
