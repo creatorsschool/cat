@@ -5,20 +5,59 @@
   vertical-align: middle;
 }
 
-.anchor{
-  /*position: relative;*/
+/*.open-left{
+  transition: all 2s;
+  transform: translateX(-50%);   
 }
 
-.add-skill{
-  display: none;
-  /*position: absolute;*/
-  /*top: 31px;
-  right:-79px; 
-  z-index: 2;
-  */border: 1px solid;
-  background-color: white;
+.open-right{
+  transition: all 2s;
+  transform: translateX(50%); 
+}*/
+
+.zero-margin{
+  margin:0;
 }
 
-.dropdown-visible{
-  overflow: visible;
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
+.box {  
+  margin: 20px;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.box-bottom {
+  animation-name: move-up;
+}
+
+.box-left {
+  animation-name: move-left;
+}
+
+.box-right {
+  animation-name: move-right;
+}
+
+@keyframes move-up { 
+  to { 
+     transform: translateY(-140px); 
+  }  
+}
+
+@keyframes move-left { 
+  to { 
+    transform: translateX(-50%); 
+  }  
+}
+
+@keyframes move-right { 
+  to { 
+    transform: translateX(50%); 
+  }  
+}
+
