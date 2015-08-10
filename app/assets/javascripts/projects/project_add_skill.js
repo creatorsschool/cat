@@ -29,6 +29,7 @@
             '</li>' );  
             $("#skills-div").removeClass("open");
             $("#members-div").removeClass("open");
+            $("#add-skill-form").addClass("hide-form");
             $("#add-skill-member").addClass("hidden");
       }
     });

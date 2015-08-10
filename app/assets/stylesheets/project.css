@@ -28,7 +28,7 @@
 .box-left{
   transition: all 1s;
 }
-.box-righ{
+.box-right{
   transition: all 1s;
 }
 .box-left.open{

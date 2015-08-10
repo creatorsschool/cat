@@ -1,15 +1,11 @@
 class Projects::MembersController < ApplicationController
   def new
-    Member.create(
-      name: params[:name],
-      email: params[:email],
-      dayshift: params[:dayshift] == "day",
-      availability: params[:availability] == "true",
-      project_id: params[:project_id])
-
+    binding.pry
+    new_members = Member.where(id: params[:member][:id])
     project = Project.find(params[:project_id])
-    new_member = project.members.last
-    render json: { project: project, new_member: new_member}
+    new_members.update_all(project_id: project.id) 
+    members = project.members 
+    render json: { project: project, members: members}
   end
 
   def destroy   
