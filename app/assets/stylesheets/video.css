@@ -1,0 +1,28 @@
+.video {
+	width: 100%;
+	position: fixed;
+	z-index: -100;
+	opacity: 0.8;
+}
+.corners {
+	padding-left: 100px;
+	padding-right: 100px;
+}
+.row{
+	width: 100%;
+	max-width:700px;
+}
+.box {
+	margin: auto;
+	margin-top: 10px;
+	color: white;
+	font-size: 20px;
+}
+.box p {
+	padding:10px;
+}
+.headlineinvitation {
+	color: white;
+	font-size: 30px;
+	text-align: center;
+}
