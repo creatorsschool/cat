@@ -12,8 +12,8 @@
   </div>
 </div>
 <div class="row boxes">
-  <div class="col s4 box" id="skills-div">
-     <ul class="collection with-header zero-margin" id="projectskillsList">
+  <div class="col s4 offset-s2  box-left" id="skills-div">
+    <ul class="collection with-header zero-margin" id="projectskillsList">
      <li class="collection-header">
         <div class="anchor">
           <h4>Skills
@@ -34,7 +34,8 @@
       <% end %>  
     </ul> 
   </div>
-  <div class="col s4 box" id="members-div">
+  <%= render  "projects/mid_section" %>
+  <div class="col s4 box-right" id="members-div">
    <ul class="collection with-header zero-margin" id="projectMembersList">
      <li class="collection-header">
         <h4>Members
@@ -63,5 +64,5 @@
       <% end %>  
     </ul> 
   </div>
-  <%= render  "projects/mid_section" %>
+  
 </div>

@@ -32,6 +32,9 @@
                  '</div>'+      
                '</div>'+                  
             '</li>' );  
+            $("#skills-div").removeClass("open");
+            $("#members-div").removeClass("open");
+            $("#add-skill-member").addClass("hidden");
       }
     });
   });

@@ -42,10 +42,11 @@ $(document).ready(function(){
 
   $('.modal-trigger').leanModal();
 
-  $("#add-skill,#add-member").on("click", function(){
-    $("#skills-div").addClass("box-left");
-    $("#members-div").addClass("box-right");
-    $("#add-skill-member").removeClass("hide-form").addClass("box-bottom");
+  $("#add-skill,#add-member").on("click", function(e){
+    e.preventDefault();
+    $("#skills-div").addClass("open");
+    $("#members-div").addClass("open");
+    $("#add-skill-member").removeClass("hidden");
   });
 
 });

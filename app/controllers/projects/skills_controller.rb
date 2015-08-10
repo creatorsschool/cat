@@ -1,6 +1,5 @@
 class Projects::SkillsController < ApplicationController
   def new    
-    binding.pry
     skill = Skill.find_by name: params[:name]
     if skill
       Project.find(params[:project_id]).skills << skill
@@ -9,7 +8,6 @@ class Projects::SkillsController < ApplicationController
     end
     project = Project.find(params[:project_id])
     new_skill = project.skills.last        
-    binding.pry
     render json: { project: project, new_skill: new_skill}
   end
 

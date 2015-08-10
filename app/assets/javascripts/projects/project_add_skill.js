@@ -27,6 +27,9 @@
                data.project.id+'/skills/' + skill.id + '"><i class="fa fa-times"></i></a>'+ 
              '</div>'+                    
             '</li>' );  
+            $("#skills-div").removeClass("open");
+            $("#members-div").removeClass("open");
+            $("#add-skill-member").addClass("hidden");
       }
     });
   });
