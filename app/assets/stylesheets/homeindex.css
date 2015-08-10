@@ -17,7 +17,7 @@
 .home_button {
 	color: white;
 	background-color: #00838f;
-	-webkit-filter:drop-shadow( 5px 5px white);
+	-webkit-filter:drop-shadow(1px 5px 5px white);
 	display: block;
 	width:300px;
 	height:60px;
@@ -32,6 +32,6 @@
 .home_button:hover {
 	color: #00838f;
 	background-color: white;
-	-webkit-filter:drop-shadow(5px 5px #00838f);
+	-webkit-filter:drop-shadow(1px 10px 10px #00838f);
 
 }

@@ -8,7 +8,6 @@
   top: 63px;
   right:0;
   width:500px;
-  border-style:solid;
   background-color: #00838f;
   display: none;
   z-index: 10;
@@ -21,4 +20,12 @@
 
 .field_with_errors label {
   color: red;
+}
+
+
+.signintext {
+  color:white;
+  font-family: Times;
+  font-size: 15px;
+
 }
