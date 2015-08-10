@@ -1,14 +1,11 @@
 class Projects::SkillsController < ApplicationController
-  def new    
-    skill = Skill.find_by name: params[:name]
-    if skill
-      Project.find(params[:project_id]).skills << skill
-    else
-      Project.find(params[:project_id]).skills << Skill.create(name: params[:name])
-    end
+  def new  
+    new_skills = Skill.where(id: params[:skill][:id])
     project = Project.find(params[:project_id])
-    new_skill = project.skills.last        
-    render json: { project: project, new_skill: new_skill}
+    project.skills << new_skills
+    skills = project.skills 
+    binding.pry 
+    render json: { project: project, skills: skills}
   end
 
   def destroy   

@@ -1,6 +1,5 @@
 class Projects::MembersController < ApplicationController
-  def new
-    binding.pry
+  def new    
     new_members = Member.where(id: params[:member][:id])
     project = Project.find(params[:project_id])
     new_members.update_all(project_id: project.id) 

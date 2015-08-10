@@ -1,6 +1,6 @@
  $(document).ready(function(){
 
-  $("#add-member").on("click", function(){
+  $('#projectMembersList').on("click", "#add-member", function(){
     $("#add-member-form").removeClass("hide-form");
   });
 
@@ -12,16 +12,7 @@
         success: function(data){
           console.log(data);
 
-            $('#projectMembersList').html('');
-            $("#projectMembersList").append(
-                '<li class="collection-header">'+
-                  '<h4>Members'+
-                    '<a id="add-member" href="#">'+
-                      '<i class="fa fa-plus-circle small icon-center right"></i>'+
-                    '</a>'+
-                  '</h4>'+
-                '</li>'
-              );
+            $('#projectMembersList').find('.collection-item').remove();
             members=data.members;
             console.log(members);
             members.forEach(function(member) {
@@ -43,6 +34,9 @@
                  '</div>'+                  
               '</li>' );  
             });
+
+            $('#membersList input:checked').parent().remove();
+
             $("#skills-div").removeClass("open");
             $("#members-div").removeClass("open");
             $("#add-member-form").addClass("hide-form");
