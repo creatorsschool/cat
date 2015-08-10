@@ -18,6 +18,11 @@
 	color: white;
 	font-size: 20px;
 }
+#creatingteams {
+	font-size: 40px;
+	margin-bottom: 0;
+	color:white;
+}
 .box p {
 	padding:10px;
 }

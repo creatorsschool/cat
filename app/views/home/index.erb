@@ -1,26 +1,17 @@
+<%= image_tag("hr-touch.png", class: "home") %>
+<div class="filter"></div>
 <div class="container">
 	<div class="row header text-center">
-	<h1 class="creatingamazingteams">C<small>reating</small> A<small>mazing</small> T<small>eams</small></h1>
-		<%= image_tag("hr-touch.png") %>
+		<h1 id="creatingteams">C<small>reating</small> A<small>mazing</small> T<small>eams</small></h1>
 	</div>
-	<div class="row">	
-		<div class="col-md-2"></div>
-		<div class="col-md-8">
-			<div class="jumbotron main member">
-				<%= link_to "Members", members_path(@members) %>	  
-			</div>		
-		</div>
-		<div class="col-md-2"></div>		
+	<div class="row">		
+		<div>
+			<%= link_to "Members", members_path(@members), class: "home_button" %>	  
+		</div>		
 	</div>	
 	<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col-md-8">
-			<div class="jumbotron main project">
-				<a href="/projects">
-					<p class="jumbotron inner index text-center">Project</p>	
-				</a>	  
-			</div>		
-		</div>
-		<div class="col-md-2"></div>		
+		<div>
+			<%= link_to "Projects", projects_path, class: "home_button" %> 
+		</div>				
 	</div>		
 </div>
