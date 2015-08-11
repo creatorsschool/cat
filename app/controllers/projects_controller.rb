@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
 
   def update
     Project.find(params[:id]).update(project_params)
-    redirect_to projects_path
+    redirect_to project_path(params[:id])
   end
 
   def show
@@ -54,18 +54,23 @@ class ProjectsController < ApplicationController
   end
 
   def search
-Skill.where.not(id: skills.map(&:id))
-    if params[:name] && params[:name] != ""
-      @projects = Project.where("name LIKE ?", "#{params[:name]}%")
+
+    # Skill.where.not(id: skills.map(&:id))
+    # if params[:name] && params[:name] != ""
+    #   @projects = Project.where("name LIKE ?", "#{params[:name]}%")
+    # else
+    #   @projects = Project.all
+    # end
+
+    # if @projects == []
+    #   flash[:error] = "Sorry no matches found for your search"
+    # end
+    if !params[:search].blank?
+      @projects = Project.where('name LIKE ?', "%#{params[:search]}%")
     else
       @projects = Project.all
     end
-
-    if @projects == []
-      flash[:error] = "Sorry no matches found for your search"
-    end
-
-    redirect_to projects_path
+    render json: {projects: @projects}
 
   end
 

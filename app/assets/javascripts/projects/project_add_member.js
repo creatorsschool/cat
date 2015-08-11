@@ -2,6 +2,7 @@
 
   $('#projectMembersList').on("click", "#add-member", function(){
     $("#add-member-form").removeClass("hide-form");
+    $("#add-skill-form").addClass("hide-form");
   });
 
   $("#add-member-button").on("click", function(){

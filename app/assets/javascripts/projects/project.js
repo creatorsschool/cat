@@ -53,4 +53,33 @@ $(document).ready(function(){
       $("#add-skill-member").addClass("hidden");
     }
   });
+
+  $("#search-button").on("click",function(){
+    $("#search-input").toggleClass("hide-form");
+  });
+
+  $('#search-input input').on('keyup', function(event) {
+    event.preventDefault();
+
+    $.ajax({
+      url: "/projects/search",
+      data: $('#search-input input').serialize(),
+      success: function(data) {
+        
+        $('#projectsList').html('');
+        data.projects.forEach(function(project) {
+          $('#projectsList').append(
+            '<li class="collection-item">'+
+                '<div>'+
+                 project.name +
+                 '<a class="secondary-content" rel="nofollow" data-method="delete" href="/projects/'+
+                 project.id + '"><i class="fa fa-times"></i></a>'+ 
+                 '<a class="secondary-content" href="/projects/'+ project.id + '">'+
+               '</div>'+                    
+              '</li>' );  
+        });
+      }
+    });
+  });
+
 });
