@@ -6,6 +6,8 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css"> 
+  
 </head>
  
 <body>
@@ -17,10 +19,7 @@
           <!-- Shows user email and home if signed in-->
         <% if signed_in? -%>
           <li id="header">
-            <%= "| " + current_user.email + " |" %>
-          </li>
-          <li id="header">
-            <%= link_to ("Home"), home_path %>
+            <%= link_to ("#{current_user.email}"), home_path %>
           </li>
         <% else %>
           <li id="header">
@@ -47,9 +46,7 @@
     </div>
   </nav>
 
-  <div class="body-movement">
     <%= yield %>
-  </div>
-        
-</body>
+  
+  </body>
 </html>

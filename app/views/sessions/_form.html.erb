@@ -3,12 +3,12 @@
       <%= form_for :session, url: session_path do |form| %>
 
         <div class="row">
-          <%= form.label :email %>
+          <%= form.label :email, class: "signintext" %>
           <%= form.text_field :email, type: 'email' %>
         </div>
 
         <div class="row">
-          <%= form.label :password %>
+          <%= form.label :password, class: "signintext" %>
           <%= form.password_field :password %>
         </div>
 
@@ -17,7 +17,7 @@
         </div>
         
         <div>
-          <%= link_to t(".forgot_password"), new_password_path %>
+          <%= link_to t(".forgot_password"), new_password_path, class: "signintext" %>
         </div>
 
       <% end %>

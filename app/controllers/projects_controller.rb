@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   def index
     @projects = Project.where(state: "created")
+    Project.where(state: nil).each{ |project| project.destroy }
     @skills = Skill.all
   end
 
@@ -55,6 +56,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @skills = @project.skills
+    @skills_left = Skill.where.not(id: @skills.map(&:id))
     @members = @project.members
   end
 
@@ -64,7 +66,7 @@ class ProjectsController < ApplicationController
   end
 
   def search
-
+Skill.where.not(id: skills.map(&:id))
     if params[:name] && params[:name] != ""
       @projects = Project.where("name LIKE ?", "#{params[:name]}%")
     else

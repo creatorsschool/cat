@@ -35,13 +35,27 @@ $(document).ready(function(){
       }
     });
   });
-  
+
   $("#create-project").on("click", function(){
     $('#secondary-form form').submit();
-    /*$.ajax({
-      type: "PUT",
-      url: '/projects/' + data.project.id + '/update_members'});*/
   });
 
   $('.modal-trigger').leanModal();
+
+  $("#add-skill,#add-member").on("click", function(e){
+    e.preventDefault();
+    $("#skills-div").addClass("open");
+    $("#members-div").addClass("open");
+    $("#add-skill-member").removeClass("hidden");
+  });
+
+  $('html').on('click',function(e){
+    debugger
+    if (!$.contains($('.row.boxes')[0],e.target)){
+      console.log('qqq');
+      $("#skills-div").removeClass("open");
+      $("#members-div").removeClass("open");
+      $("#add-skill-member").addClass("hidden");
+    }
+  });
 });

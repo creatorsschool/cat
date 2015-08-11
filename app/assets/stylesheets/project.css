@@ -5,20 +5,35 @@
   vertical-align: middle;
 }
 
-.anchor{
-  /*position: relative;*/
+.zero-margin{
+  margin:0;
 }
 
-.add-skill{
-  display: none;
-  /*position: absolute;*/
-  /*top: 31px;
-  right:-79px; 
-  z-index: 2;
-  */border: 1px solid;
-  background-color: white;
+.boxes{
+  position: relative;
 }
 
-.dropdown-visible{
-  overflow: visible;
+.box-bottom#add-skill-member{
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  transition: all 1s;
+}
+
+.box-bottom.hidden#add-skill-member{
+  transform: translate(-50%,50%);
+  opacity: 0;
+}
+.box-left{
+  transition: all 1s;
+}
+.box-right{
+  transition: all 1s;
+}
+.box-left.open{
+  transform: translateX(-50%);
+}
+.box-right.open{
+  transform: translateX(50%);
 }
