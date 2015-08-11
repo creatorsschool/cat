@@ -1,19 +1,17 @@
 $(document).ready(function(){
 
-  $("#show-form, #refresh-form, input").on("click", function(e){
-    //e.preventDefault();
+  $("#skills-checkbox ").on("click", function(e){
+   //e.preventDefault();
 
    $.ajax({
-      type: "POST",
-      url: "/projects",
+      type: "GET",
+      url: "/projects/select_members",
       data: $('#main-form form').serialize(),
       success: function(data){
         console.log(data);
         $("#main-form").removeClass("offset-s3");
         $("#secondary-form").removeClass("hide-form");
-        $("#main-form-button").removeClass("hide-form");
         $("#create-button").removeClass("hide-form");
-        $("#show-form").addClass("hide-form");
 
         $('#membersList').html('');
         data.members.forEach(function(member) {
@@ -24,9 +22,9 @@ $(document).ready(function(){
               '</div>');
         });
 
-        $('#secondary-form form').attr({ 
-          action: '/projects/' + data.project.id + '/update_members',
-        });
+        //$('#secondary-form form').attr({ 
+        //  action: '/projects/' + data.project.id + '/update_members',
+        //});
 
         /*$('#secondary-form form').attr('action','/projects/' + data.project.id + '/update_members'});*/
       },
@@ -36,9 +34,7 @@ $(document).ready(function(){
     });
   });
 
-  $("#create-project").on("click", function(){
-    $('#secondary-form form').submit();
-  });
+  
 
   $('.modal-trigger').leanModal();
 
@@ -50,7 +46,6 @@ $(document).ready(function(){
   });
 
   $('html').on('click',function(e){
-    debugger
     if (!$.contains($('.row.boxes')[0],e.target)){
       console.log('qqq');
       $("#skills-div").removeClass("open");

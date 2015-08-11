@@ -3,61 +3,51 @@
 <div class="section"></div>
 <div class="container">
   <div class="row">
-    <div class="col s6 offset-s3" id="main-form"> 
-      <%= form_for @project, class: "col s12", id: "skills_submit" do |f| %>       
-        <div class="input-field">        
-          <%= f.text_field :name %>
-          <%= f.label :name,"Name"  %>
-        </div>
-        <div class="input-field">
-          <%= f.text_area :description, class: "materialize-textarea" %>
-          <%= f.label :description,"Description"  %>              
-        </div>
-        <%= f.label "Skills"  %>
-        <div class="row" >
-          <%= collection_check_boxes(:project, :skill_ids, Skill.all, :id, :name) do |b| %>
-            <div class="col s12 m6 l4">
-              <%= b.check_box %>
-              <%= b.label %>
+    <div class="col s12 offset-s3" id="main-form"> 
+      <%= form_for @project, class: "col s12", id: "skills_submit" do |f| %> 
+        <div class="row">
+          <div class="col s6">
+            <div class="input-field">        
+              <%= f.text_field :name %>
+              <%= f.label :name,"Name"  %>
             </div>
-          <% end %>  
-        </div>  
-        <div class="row center-align">
-          <%= link_to '#', class: "btn", id: "show-form" do %> 
-            <i class="fa fa-search left"></i>Members
-          <% end %>
-        </div>                  
-      <% end %>  
-    </div> 
-      <div class="col s5 offset-s1 hide-form" id="secondary-form">
-        <%= form_for @project, url: '#', method: :put do |f| %>
-         <%= f.label "Members" %>
-        <div class="row" id="membersList">
-          <%= collection_check_boxes(:project,:member_ids,@members_filter,:id,:name) do |b|%>  
-            <div class="col s12 m6 l4">
-            <%= b.check_box %>
-            <%= b.label %>
+            <div class="input-field">
+              <%= f.text_area :description, class: "materialize-textarea" %>
+              <%= f.label :description,"Description"  %>              
+            </div>
+            <%= f.label "Skills"  %>
+            <div class="row">
+              <%= collection_check_boxes(:project, :skill_ids, Skill.all, :id, :name) do |b| %>
+                <div class="col s12 m6 l4" id="skills-checkbox">
+                  <%= b.check_box %>
+                  <%= b.label %>
+                </div>
+              <% end %>  
+            </div>            
           </div>
+          <div class="col s5 offset-s1 hide-form" id="secondary-form">
+            <%= f.label "Members" %>
+            <div class="row" id="membersList">
+              <%= collection_check_boxes(:project,:member_ids,@members_filter,:id,:name) do |b|%>  
+                <div class="col s12 m6 l4">
+                  <%= b.check_box %>
+                  <%= b.label %>
+                </div>
+              <% end %>
+
+            </div>
+            
+          </div> 
+        </div>
+        <div class="row center-align hide-form" id="create-button">
+          <%= f.button class: "btn", id: "create-project" do %> 
+            <i class="fa fa-check-circle left"></i>Create
           <% end %>
         </div>
-      <% end %>
-    </div>    
-  </div>
-  <div class="row">
-    <div class="row center-align hide-form" id="main-form-button">
-      <%= link_to '#', class: "btn", id: "refresh-form" do %> 
-        <i class="fa fa-search left"></i>Members
-      <% end %>
+    
+      <% end %> 
     </div>      
-  </div>
-  <div class="row">
-    <div class="row center-align hide-form" id="create-button">
-      <%= link_to '#', class: "btn", id: "create-project" do %> 
-        <i class="fa fa-check-circle left"></i>Create
-      <% end %>
-    </div>      
-  </div>
-      
+  </div>    
 </div>
   
 
