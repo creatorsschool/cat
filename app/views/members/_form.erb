@@ -13,7 +13,9 @@
     <%= f.label :name %>:
     <%= f.text_field :name %><br/>
     <% if @member.errors[:name] %>
-    Name <%= @member.errors[:name].join(",") %>
+    <div class="error-for-name">
+    <%=@member.errors[:name].join(",") %>
+    </div>
     <%end%>
     </div>
   </div>

@@ -39,6 +39,55 @@
   flex-grow: 1;
   align-self: center;
   font-family: times new roman;
+  position: relative;
 }
+
+.member-attributes a .fa.fa-pencil-square-o {
+ font-size: x-large;
+ color: green;
+ position: absolute;
+ margin-left: 297px;
+ margin-top: -5px;
+
+}
+
+.member-attributes a .fa.fa-times {
+ font-size: x-large;
+ color: green;
+ position: absolute;
+ margin-left: 333px;
+ margin-top: -5px;
+
+}
+
+.index-container {
+ 
+}
+
+.container.add-member {
+  
+ 
+}
+
+.container.search-member {
+  margin-left: 98px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
