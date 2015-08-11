@@ -49,4 +49,13 @@ $(document).ready(function(){
     $("#add-skill-member").removeClass("hidden");
   });
 
+  $('html').on('click',function(e){
+    debugger
+    if (!$.contains($('.row.boxes')[0],e.target)){
+      console.log('qqq');
+      $("#skills-div").removeClass("open");
+      $("#members-div").removeClass("open");
+      $("#add-skill-member").addClass("hidden");
+    }
+  });
 });
