@@ -14,7 +14,7 @@
     <%= f.text_field :name %><br/>
     <% if @member.errors[:name] %>
     <div class="error-for-name">
-    <%=@member.errors[:name].join(",") %>
+    This field<%=@member.errors[:name].join(",") %>
     </div>
     <%end%>
     </div>
@@ -67,7 +67,7 @@
 
  
 
-    <%= f.submit "Create member" %>
+    <%= f.submit "Create member", class: "btn" %>
   <% end %>
 </div>
 
