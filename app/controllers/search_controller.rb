@@ -10,7 +10,7 @@ class SearchController < ApplicationController
       render json: "Sorry no matches found for your search", status: 404
     else 
       render json: @members.map { |member|
-        member.attributes.merge(working_hours: member.working_hours, skills: member.skills) 
+        member.attributes.merge(working_hours: member.working_hours, skills: member.skills, avatar: member.avatar.url) 
       }        
     end 
   end

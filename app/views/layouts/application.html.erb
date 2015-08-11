@@ -19,10 +19,7 @@
           <!-- Shows user email and home if signed in-->
         <% if signed_in? -%>
           <li id="header">
-            <%= "| " + current_user.email + " |" %>
-          </li>
-          <li id="header">
-            <%= link_to ("Home"), home_path %>
+            <%= link_to ("#{current_user.email}"), home_path %>
           </li>
         <% else %>
           <li id="header">
@@ -49,15 +46,7 @@
     </div>
   </nav>
 
-  <div id="flash">
-    <% flash.each do |key, value| -%>
-      <div id="flash_<%= key %>"><%=h value %></div>
-    <% end -%>
-  </div>
-
-  <div class="body-movement">
     <%= yield %>
-  </div>
-        
-</body>
+  
+  </body>
 </html>

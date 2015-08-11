@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
-  $("#show-form, #refresh-form").on("click", function(e){
-    e.preventDefault();
+  $("#show-form, #refresh-form, input").on("click", function(e){
+    //e.preventDefault();
 
    $.ajax({
       type: "POST",

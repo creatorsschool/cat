@@ -1,13 +1,22 @@
-<%= link_to "Add Members", new_member_path %>  
+<div class="index-container"> 
 
-<div class="row">
-  <%= form_tag(search_members_path, method: "get", id: "search-form") do %>
-    <div class="input-field col s6">
-      <%= label_tag(:name, "Search member:") %>
-      <%= text_field_tag(:name) %>
-      <%= submit_tag("Search", class: "btn") %>
+  <div class="container add-member">
+    <div class="row">
+        <%= link_to "Create New Member", new_member_path, class:"btn" %></span>
     </div>
-  <% end %>
+  </div> 
+
+  <div class="container search-member">
+    <div class="row">
+          <%= form_tag(search_members_path, method: "get", id: "search-form") do %>
+        <div id="search-member" class="input-field col s6 ">
+          <%= label_tag(:name, "Search member: ", class:"fa fa-search" )%>    
+          <%= text_field_tag(:name) %>
+          <%= submit_tag("Search", class: "btn") %>   
+        </div>
+    </div>
+  </div> 
+          <% end %>
 </div>
 
 <div id="search-error"></div>
@@ -21,6 +30,7 @@
         <% else %>
           <div id="members-card" class="col s5 card">
         <% end %>
+
           <div class="member-attributes">
             <p class="name">Name: <%= member.name %></p>
             <p class="email">E-mail: <%=member.email%></p>
@@ -36,9 +46,17 @@
                   <%= skill.name %>
                 <% end %>
               </p>
+                  <%= link_to edit_member_path(member) do %>
+                    <i class="fa fa-pencil-square-o"></i>
+                <%end%>
+                  <%= link_to member_path(member), method: :delete do %>
+                    <i class="fa fa-times"></i>
+                  <%end%>
+                
+            
             </div>
           </div>
-          <%= image_tag(member.avatar.url, class: "avatar") %>
+          <%= image_tag(member.avatar.url, class: "profile-picture") %>
         </div>
       <% end %>
     </div>

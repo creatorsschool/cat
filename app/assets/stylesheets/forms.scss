@@ -7,22 +7,24 @@
   position:fixed;
   top: 63px;
   right:0;
-  border-style:solid;
+  width:500px;
   background-color: #00838f;
   display: none;
   z-index: 10;
 }
 
 .sign-form.sign-form-open {
-
   display: block;
 }
 
-.member-available {
 
+.field_with_errors label {
+  color: red;
 }
 
-.member-unavailable {
 
+.signintext {
+  color:white;
+  font-family: Times;
+  font-size: 15px;
 }
-
