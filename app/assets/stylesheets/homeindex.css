@@ -35,3 +35,11 @@
 	-webkit-filter:drop-shadow(1px 10px 10px #00838f);
 
 }
+
+#header {
+	color: black;
+}
+
+#sign-in-button {
+	color: black;
+}

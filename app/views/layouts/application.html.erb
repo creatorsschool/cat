@@ -19,21 +19,21 @@
           <!-- Shows user email and home if signed in-->
         <% if signed_in? -%>
           <li id="header">
-            <%= link_to ("#{current_user.email}"), home_path %>
+            <%= link_to ("#{current_user.email}"), home_path, class: "nav-text" %>
           </li>
         <% else %>
           <li id="header">
-            <%= link_to ("About"), root_path %>
+            <%= link_to ("About"), root_path, class: "nav-text" %>
           </li>
           <li id="header">
-            <%= link_to ("Sign up"), sign_up_path %>
+            <%= link_to ("Sign up"), sign_up_path,  class: "nav-text" %>
           </li>
         <% end -%>
 
         <li id="header">
             <!-- Changes button sign_in to sign_out and vice-versa-->
           <% if signed_in? -%>
-            <%= link_to t(".sign_out"), sign_out_path, method: :delete %>
+            <%= link_to t(".sign_out"), sign_out_path, method: :delete, class: "nav-text" %>
           <% else -%>
           <a href="#" id="sign-in-button">Sign in</a>
             <div class ="sign-form">

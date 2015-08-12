@@ -4,6 +4,12 @@
   z-index:1;
 }
 
+.world-members {
+  width:100%;
+  max-height: 250px;
+
+}
+
 
 
 #membercard-container {
@@ -106,8 +112,8 @@
 position: absolute;
 z-index: 2;
 margin-top: 100px;
-background-color: #fce4ec;
-opacity: 0.3;
+background-color: rgba(252,228,236,0.3);
+
 width: 500px;
 height: 150px;
 color: #880e4f;
@@ -121,6 +127,8 @@ margin-top: 50px;
 #create-member {
   text-align: center;
   margin-top: 48px;
+  color: #263238;
+  opacity: 1;
 }
 
 
