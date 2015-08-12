@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col s12 offset-s3" id="main-form"> 
-      <%= form_for @project, class: "col s12", id: "skills_submit" do |f| %> 
+      <%= form_for @project, class: "col s12" do |f| %> 
         <div class="row">
           <div class="col s6">
             <div class="input-field">        
@@ -25,7 +25,7 @@
               <% end %>  
             </div>            
           </div>
-          <div class="col s5 offset-s1 hide-form" id="secondary-form">
+          <div class="col s5 offset-s1" id="secondary-form">
             <%= f.label "Members" %>
             <div class="row" id="membersList">
               <%= collection_check_boxes(:project,:member_ids,@members_filter,:id,:name) do |b|%>  

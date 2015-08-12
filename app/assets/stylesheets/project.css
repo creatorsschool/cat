@@ -25,6 +25,8 @@
   transform: translate(-50%,50%);
   opacity: 0;
 }
+
+
 .box-left{
   transition: all 1s;
 }
@@ -37,3 +39,19 @@
 .box-right.open{
   transform: translateX(50%);
 }
+
+#main-form{
+  transition: all 1s;
+}
+#main-form.open{
+  transform: translateX(-25%);
+}
+
+#secondary-form{
+  transition: all 2s;
+  opacity: 0;
+}
+#secondary-form.show{
+  opacity: 1;
+}
+

@@ -2,15 +2,17 @@ $(document).ready(function(){
 
   $("#skills-checkbox ").on("click", function(e){
    //e.preventDefault();
+   $("#main-form").addClass("open");
 
+   //$("#secondary-form")
    $.ajax({
       type: "GET",
       url: "/projects/select_members",
       data: $('#main-form form').serialize(),
       success: function(data){
         console.log(data);
-        $("#main-form").removeClass("offset-s3");
-        $("#secondary-form").removeClass("hide-form");
+       
+        setTimeout(function(){$("#secondary-form").addClass("show");},800);
         $("#create-button").removeClass("hide-form");
 
         $('#membersList').html('');
@@ -22,12 +24,7 @@ $(document).ready(function(){
               '</div>');
         });
 
-        //$('#secondary-form form').attr({ 
-        //  action: '/projects/' + data.project.id + '/update_members',
-        //});
-
-        /*$('#secondary-form form').attr('action','/projects/' + data.project.id + '/update_members'});*/
-      },
+       },
       error: function(xhr, status, error) {
         console.log(error);
       }
