@@ -8,7 +8,7 @@
 	padding-left: 100px;
 	padding-right: 100px;
 }
-.row.of_video{
+.row.of_video {
 	width: 100%;
 	max-width:700px;
 }
@@ -26,8 +26,14 @@
 .box p {
 	padding:10px;
 }
-.headlineinvitation {
+.headlineinvitation{
 	color: white;
 	font-size: 30px;
 	text-align: center;
+}
+
+.intro_button{
+	margin-top: 50px;
+	text-align:center;
+	font-size: 20px;
 }

@@ -13,20 +13,23 @@
 <body>
   <nav>
     <div class="nav-wrapper">
-      <a href="/" ><img class ="brand-logo-left" height ="60" width="60" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Black_Cat_Vector.svg/2000px-Black_Cat_Vector.svg.png"/></a>
+      <img class ="brand-logo-left" height ="60" width="60" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Black_Cat_Vector.svg/2000px-Black_Cat_Vector.svg.png"/>
 
       <ul class="right">
           <!-- Shows user email and home if signed in-->
         <% if signed_in? -%>
           <li id="header">
-            <%= link_to ("#{current_user.email}"), home_path %>
+            <%= current_user.email %>
+          </li>
+          <li id="header">
+            <%= link_to ("Home"), home_path %>
+          </li>
+          <li id="header">
+            <%= link_to ("About"), root_path %>
           </li>
         <% else %>
           <li id="header">
             <%= link_to ("About"), root_path %>
-          </li>
-          <li id="header">
-            <%= link_to ("Sign up"), sign_up_path %>
           </li>
         <% end -%>
 

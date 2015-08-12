@@ -1,7 +1,9 @@
-.home {
+.home_image {
+	top: -122px;
 	width:100%;
-	position: fixed;
+	position:fixed;
 	z-index: -2;
+	opacity:0.9;
 
 }
 
@@ -16,8 +18,9 @@
 
 .home_button {
 	color: white;
+	-webkit-transition: all .25s ease-in;
 	background-color: #00838f;
-	-webkit-filter:drop-shadow(1px 5px 5px white);
+	-webkit-filter:drop-shadow(3px 3px white);
 	display: block;
 	width:300px;
 	height:60px;
@@ -32,6 +35,6 @@
 .home_button:hover {
 	color: #00838f;
 	background-color: white;
-	-webkit-filter:drop-shadow(1px 10px 10px #00838f);
+	-webkit-filter:drop-shadow(3px 3px #00838f);
 
 }

@@ -1,10 +1,10 @@
 <%= render "shared/page_title", title: "Create Account" %>
 
 <div class="section"></div>
-<div id="clearance" class="box">
+<div id="clearance" class="create_account">
   <%= form_for @user do |form| %>
     <%= render partial: '/users/form', object: form %>
-    <div class="row">
+    <div>
       <%= form.submit "Submit", class: "btn" %>
     </div>
   <% end %>
