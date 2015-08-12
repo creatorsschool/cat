@@ -50,7 +50,7 @@ $(document).ready(function(){
   });
 
   $('html').on('click',function(e){
-    debugger
+    
     if (!$.contains($('.row.boxes')[0],e.target)){
       console.log('qqq');
       $("#skills-div").removeClass("open");

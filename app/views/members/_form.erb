@@ -1,4 +1,5 @@
-<h1>Create member</h1>
+<div class="create-member-title"><h3 id="create-member">Create Member</h3></div>
+<%= image_tag("yellow-balloon-tied-with-red-thread.jpg", class: "ballons-members") %>
   <% if !@member.errors.empty?  %>
     <%@member.errors.messages.each do |key, value|%>
     <div> <%="#{key}: #{value}" %> </div>
@@ -6,32 +7,33 @@
   <%end%>
 
 
-<div class="container">
+<div class="container create-member">
   <div class = "row">
   <%= form_for @member, html:{multipart: "true"}, id:"create-member" do |f| %>
-    <div class="col s6">
-    <%= f.label :name %>:
+    <div class="col s6 offset-s3">
+    <%= f.label :name, class: "labels" %>:
     <%= f.text_field :name %><br/>
     <% if @member.errors[:name] %>
     <div class="error-for-name">
-    This field<%=@member.errors[:name].join(",") %>
+    <%=@member.errors[:name].join(",") %>
     </div>
     <%end%>
     </div>
   </div>
 
   <div class="row">
-    <div class="col s6">
-    <%= f.label :email %>:
+    <div class="col s6 offset-s3">
+    <%= f.label :email, class: "labels" %>:
     <%= f.text_field :email %><br/>
     </div>
   </div>
 
   <div class="row">
-    <div class="col s6">
-      <%=f.label :skills %>
+    <div class="col s6 offset-s3">
+      <div class="label-skills">
+      <%=f.label :skills, class: "labels" %></div>
       <%= f.collection_check_boxes(:skill_ids, @skills, :id, :name) do |b| %>
-      <div class="col s3">
+      <div class="col s4">
         <%=b.check_box%>
         <%=b.label%>
       </div>
@@ -41,33 +43,41 @@
   </div>
 
   <div class="row">
-    <div class="col s6">
-    <p>Availability</p>
-    <%= radio_button_tag(:availability, "true") %>
+    <div class="col s6 offset-s3">
+    <%= label_tag :Availability, class: "labels" %>
+    <p><%= radio_button_tag(:availability, "true") %>
     <%= label_tag(:availability_true, "Available") %>
     <%= radio_button_tag(:availability, "false") %>
-    <%= label_tag(:availability_false, "Not Available") %>
+    <%= label_tag(:availability_false, "Not Available") %></p>
     </div>
   </div>
 
   <div class="row">
-    <div class="col s4">
-    <p>Working Hours Preferencies</p>
+    <div class="col s4 offset-s3">
+    <%=f.label "Working Hours Preferencies", class: "labels"%><p>
     <%= f. label :dayshift
     f.text_field :dayshift
-    f.select :dayshift, options_for_select([['Day', 'day'], ['Night', 'night']]), {}, class: 'browser-default' %>
+    f.select :dayshift, options_for_select([['Day', 'day'], ['Night', 'night']]), {}, id:"select-box", class: 'browser-default' %></p>
     </div>
   </div>
   
   <div class="row">
-    <div class="col s4">
-  <%= f.file_field(:avatar) %>
+    <div class="col s4 offset-s3">
+  <%= f.label "upload your picture here", class: "labels" %>
+
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>Upload</span>
+        <%= f.file_field(:avatar) %>
+      </div>
+    </div>
+
     </div>
   </div>
 
  
 
-    <%= f.submit "Create member", class: "btn" %>
+    <%= f.submit "Create member", class: "btn create-member" %>
   <% end %>
 </div>
 

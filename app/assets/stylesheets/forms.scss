@@ -8,9 +8,15 @@
   top: 63px;
   right:0;
   width:500px;
-  background-color: #00838f;
+  background-color: white;
+  border: solid #00838f;
   display: none;
   z-index: 10;
+
+}
+
+.text {
+  color: black;
 }
 
 .sign-form.sign-form-open {
@@ -24,7 +30,12 @@
 
 
 .signintext {
-  color:white;
+  color:#00838f;
   font-family: Times;
   font-size: 15px;
 }
+
+
+
+
+

@@ -1,3 +1,10 @@
+.ballons-members {
+  width:100%;
+  max-height: 250px;
+  z-index:1;
+}
+
+
 
 #membercard-container {
   width: 80%;
@@ -64,15 +71,56 @@
  
 }
 
-.btn.create-member {
+.btn.add-member {
   margin-left: -57px;
   margin-top: 19px;
-  
- 
 }
 
 .container.search-member {
   margin-left: 98px;
+}
+
+.container.create-member {
+  
+  border: outset;
+
+
+}
+
+
+.labels {
+  font-size: 16px;
+  color: black;
+}
+
+#select-box {
+  height: 30px;
+  background-color: #a7ffeb;
+}
+
+.btn.create-member{
+  margin-left: 569px;
+}
+
+.create-member-title {
+position: absolute;
+z-index: 2;
+margin-top: 100px;
+background-color: #fce4ec;
+opacity: 0.3;
+width: 500px;
+height: 150px;
+color: #880e4f;
+border-radius: 20%;
+left: 50%;
+transform: translateX(-50%);
+margin-top: 50px;
+
+}
+
+#create-member {
+  text-align: center;
+  margin-top: 48px;
 }
 
 
