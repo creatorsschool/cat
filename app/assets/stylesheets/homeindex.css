@@ -1,10 +1,20 @@
 .home_image {
-	top: -122px;
+	top: -300px;
+	left: 140px;
+	-webkit-transform: rotate(-90deg) ;
 	width:100%;
 	position:fixed;
 	z-index: -2;
 	opacity:0.9;
 
+}
+
+.index_image {
+	top: -122px;
+	width:100%;
+	position:fixed;
+	z-index: -2;
+	opacity:0.9;
 }
 
 .filter {
