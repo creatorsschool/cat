@@ -37,3 +37,43 @@
 .box-right.open{
   transform: translateX(50%);
 }
+
+.project-image {
+  width:100%;
+  max-height: 250px;
+  z-index:1;
+}
+
+
+
+.project-list {
+position: absolute;
+z-index: 2;
+margin-top: 100px;
+background-color: rgba(1,87,155, 0.2);
+
+width: 500px;
+height: 150px;
+color: #263238;
+border-radius: 20%;
+left: 50%;
+transform: translateX(-50%);
+margin-top: 50px;
+}
+
+#project-list-banner {
+  text-align: center;
+  margin-top: 48px;
+  color: black;
+  opacity: 1;
+}
+
+a .fa.fa-plus-circle.small.icon-center {
+  margin-top: -201px;
+  margin-left: 540px;
+}
+
+
+
+
+
