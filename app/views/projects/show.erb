@@ -5,7 +5,7 @@
     <%= link_to "#modal1", class: "modal-trigger", id:"modal-pencil" do %>
     <i class="fa fa-pencil-square-o small icon-center"></i>
     <% end %>
-    <%= link_to "projects_path", id:"goto-index" do %>
+    <%= link_to "/projects", id:"goto-index" do %>
       <i class="fa fa-bars small icon-center"></i>
     <% end %>
     </h2>
@@ -60,7 +60,10 @@
               <img src=<%= member.avatar.url %> alt="" class="circle">
               <span class="title"><%= member.name %></span>
               <p><%= member.email %><br>
+              <div class="member-<%= member.availability ? "available" : "unavailable" %>">
                  <%= member.availability ? "Available" : "Unavailable" %>
+                 <div class="availability-circle"></div>
+              </div>
               </p>  
             </div>
             <div class="col s2">

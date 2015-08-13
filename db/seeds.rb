@@ -16,11 +16,10 @@ Skill.create(name:"css"),
 Skill.create(name:"ruby"),
 Skill.create(name:"js"),
 Skill.create(name:"html"),
-Skill.create(name:"animation"),
-Skill.create(name:"surjery"),
+Skill.create(name:"animation")
 ];
 members = [
-Member.create(name: "Delmar", dayshift: true, availability: true, email: "delmar@catteam.com",project_id: 1, avatar: File.open(Rails.root.join("db/seeds/delmar.jpg"))), 
+Member.create(name: "Delmar", dayshift: true, availability: true, email: "delmar@catteam.com", avatar: File.open(Rails.root.join("db/seeds/delmar.jpg"))), 
 Member.create(name: "Ana", dayshift: true, availability: true, email: "ana@catteam.com", avatar: File.open(Rails.root.join("db/seeds/ana.jpg"))), 
 Member.create(name: "Patricia", dayshift: true, availability: true, email: "patricia@catteam.com",project_id: 3,avatar: File.open(Rails.root.join("db/seeds/patricia.jpg")))
 ];
@@ -28,8 +27,7 @@ Member.create(name: "Patricia", dayshift: true, availability: true, email: "patr
 projects = [
 Project.create(name: "Creator School", description: "Become a super hero developer with us", duration:1),
 Project.create(name: "First job", description: "Create a super website with full database", duration:2),
-Project.create(name: "Job app", description: "Code like a zombie on rails developer", duration:4),
-Project.create(name: "Leg surgery", description: "Preparation for subjects leg surgery class", duration:3),
+Project.create(name: "Job app", description: "Code like a zombie on rails developer", duration:4)
 ];
 
 
@@ -49,6 +47,5 @@ ProjectSkill.create(project_id: projects[0].id, skill_id: skills[1].id),
 ProjectSkill.create(project_id: projects[0].id, skill_id: skills[3].id),
 ProjectSkill.create(project_id: projects[1].id, skill_id: skills[0].id),
 ProjectSkill.create(project_id: projects[2].id, skill_id: skills[1].id),
-ProjectSkill.create(project_id: projects[2].id, skill_id: skills[2].id),
-ProjectSkill.create(project_id: projects[3].id, skill_id: skills[5].id)
+ProjectSkill.create(project_id: projects[2].id, skill_id: skills[2].id)
 ]
