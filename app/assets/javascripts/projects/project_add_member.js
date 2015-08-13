@@ -2,6 +2,7 @@
 
   $('#projectMembersList').on("click", "#add-member", function(){
     $("#add-member-form").removeClass("hide-form");
+    $("#add-skill-form").addClass("hide-form");
   });
 
   $("#add-member-button").on("click", function(){
@@ -22,7 +23,7 @@
               '<li class="collection-item avatar">'+
                 '<div class="row">'+
                    '<div class="col s10">'+
-                    '<i class="fa fa-picture-o circle"></i>'+
+                    '<img src="'+ member.avatar.url +'" alt="" class="circle">'+
                      '<span class="title">'+ member.name + '</span>'+
                      '<p>' + member.email + '<br>'+ availability +
                      '</p>'+ 
