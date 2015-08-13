@@ -70,9 +70,8 @@ margin-top: 50px;
   opacity: 1;
 }
 
-a .fa.fa-plus-circle.small.icon-center {
-  margin-top: -201px;
-  margin-left: 540px;
+#add-button, #search-button, #modal-pencil, #goto-index {
+  color: white;
 }
 
 
