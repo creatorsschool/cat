@@ -2,6 +2,10 @@
   <%= link_to "#modal1", class: "modal-trigger" do %>
     <i class="fa fa-pencil-square-o small icon-center"></i>
   <% end %>
+  <%= link_to projects_path do %>
+    <i class="fa fa-bars small icon-center"></i>
+  <% end %>
+<% end %>
 
 
 <%= render  "projects/modal" %>
@@ -48,7 +52,7 @@
         <li class="collection-item avatar">
           <div class="row">
             <div class="col s10">
-              <i class="fa fa-picture-o circle"></i>
+              <img src=<%= member.avatar.url %> alt="" class="circle">
               <span class="title"><%= member.name %></span>
               <p><%= member.email %><br>
                  <%= member.availability ? "Available" : "Unavailable" %>

@@ -9,8 +9,7 @@ Rails.application.routes.draw do
 
   resources :members
   resources :projects do
-    get :select_members
-    put :update_members
+    get :select_members, on: :collection
     resources :members, only: [:new,:destroy], controller: 'projects/members'
     resources :skills, only: [:new,:destroy], controller: 'projects/skills'
   end

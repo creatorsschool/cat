@@ -5,13 +5,24 @@
   <%= link_to new_project_path do %>
     <i class="fa fa-plus-circle small icon-center"></i>
   <% end %>
+  <%= link_to "#" do %>
+    <i class="fa fa-search small icon-center" id="search-button"></i>
+  <% end %>
 <% end %>
 
 
 <div class="section"></div>
 <div class="container">
+  <div class="row hide-form" id="search-input">
+    <div class="col s6 offset-s3">
+      <div class="input-field"> 
+        <%= text_field_tag :search %>
+        <%= label_tag :search,'Enter your search query here'  %>  
+      </div>
+    </div>    
+  </div>
   <div class="row">
-    <ul class="collection">
+    <ul class="collection" id="projectsList">
       <% @projects.each do |project|%>
         <li class="collection-item">
           <div>

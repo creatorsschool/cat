@@ -3,6 +3,7 @@
 
   $("#add-skill").on("click", function(){
     $("#add-skill-form").removeClass("hide-form");
+    $("#add-member-form").addClass("hide-form");
   });
 
 

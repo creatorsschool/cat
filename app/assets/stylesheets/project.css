@@ -25,6 +25,8 @@
   transform: translate(-50%,50%);
   opacity: 0;
 }
+
+
 .box-left{
   transition: all 1s;
 }
@@ -74,6 +76,18 @@ a .fa.fa-plus-circle.small.icon-center {
 }
 
 
+#main-form{
+  transition: all 1s;
+}
+#main-form.open{
+  transform: translateX(-25%);
+}
 
-
+#secondary-form{
+  transition: all 0.5s;
+  opacity: 0;
+}
+#secondary-form.show{
+  opacity: 1;
+}
 
