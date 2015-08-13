@@ -1,8 +1,12 @@
+<div class="project-list"><h2 id="project-list-banner">Project List</h2></div>
+<%= image_tag("postit-people.jpg", class: "project-image") %>
+
 <%= render layout: "shared/page_title", locals: {title: "Project List"} do %>
   <%= link_to new_project_path do %>
     <i class="fa fa-plus-circle small icon-center"></i>
   <% end %>
 <% end %>
+
 
 <div class="section"></div>
 <div class="container">
