@@ -71,7 +71,7 @@ $(document).ready(function(){
                  project.name +
                  '<a class="secondary-content" rel="nofollow" data-method="delete" href="/projects/'+
                  project.id + '"><i class="fa fa-times"></i></a>'+ 
-                 '<a class="secondary-content" href="/projects/'+ project.id + '">'+
+                 '<a class="secondary-content" href="/projects/'+ project.id + '"><i class="fa fa-info-circle"></i></a>'+
                '</div>'+                    
               '</li>' );  
         });

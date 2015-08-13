@@ -48,7 +48,7 @@
 }
 
 #secondary-form{
-  transition: all 2s;
+  transition: all 0.5s;
   opacity: 0;
 }
 #secondary-form.show{
