@@ -12,28 +12,23 @@
  
 <body>
   <nav>
-    <div class="nav-wrapper color">
-      <a href="/" ><img class ="brand-logo-left" height ="60" width="60" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Black_Cat_Vector.svg/2000px-Black_Cat_Vector.svg.png"/></a>
+    <div class="nav-wrapper">
+      <img class ="brand-logo-left" height ="60" width="60" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Black_Cat_Vector.svg/2000px-Black_Cat_Vector.svg.png"/>
 
       <ul class="right">
-          <!-- Shows user email and home if signed in-->
         <% if signed_in? -%>
-          <li id="header">
-            <%= link_to ("#{current_user.email}"), home_path, class: "nav-text" %>
+          <li id="header">            
+            <%= current_user.email %>
           </li>
-        <% else %>
+          <li id="header">
+            <%= link_to ("Home"), home_path %>
+          </li>
           <li id="header">
             <%= link_to ("About"), root_path, class: "nav-text" %>
           </li>
-          <li id="header">
-            <%= link_to ("Sign up"), sign_up_path,  class: "nav-text" %>
-          </li>
-        <% end -%>
-
-        <li id="header">
-            <!-- Changes button sign_in to sign_out and vice-versa-->
-          <% if signed_in? -%>
+          <li id="header">          
             <%= link_to t(".sign_out"), sign_out_path, method: :delete, class: "nav-text" %>
+          </li>
           <% else -%>
           <a href="#" id="sign-in-button">Sign in</a>
             <div class ="sign-form">
@@ -41,8 +36,8 @@
             </div>
           <% end -%>
         </li>
-
       </ul>
+
     </div>
   </nav>
 
