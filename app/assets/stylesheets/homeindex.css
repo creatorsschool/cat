@@ -55,3 +55,10 @@
 #sign-in-button {
 	color: black;
 }
+
+#members-banner {
+  text-align: center;
+  margin-top: 48px;
+  color: #263238;
+  opacity: 1;
+}
