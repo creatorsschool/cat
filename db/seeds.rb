@@ -20,9 +20,9 @@ Skill.create(name:"animation"),
 Skill.create(name:"surjery"),
 ];
 members = [
-Member.create(name: "Delmar", dayshift: true, availability: true, email: "delmar@catteam.com",project_id: 1, avatar: File.open(Rails.root.join("db/seeds/me.jpg"))), 
-Member.create(name: "Ana", dayshift: true, availability: true, email: "ana@catteam.com",project_id: 2, avatar: File.open(Rails.root.join("db/seeds/patricia.jpg"))), 
-Member.create(name: "Patricia", dayshift: true, availability: true, email: "patricia@catteam.com",project_id: 3,avatar: File.open(Rails.root.join("db/seeds/foto_pass.jpg")))
+Member.create(name: "Delmar", dayshift: true, availability: true, email: "delmar@catteam.com",project_id: 1, avatar: File.open(Rails.root.join("db/seeds/delmar.jpg"))), 
+Member.create(name: "Ana", dayshift: true, availability: true, email: "ana@catteam.com", avatar: File.open(Rails.root.join("db/seeds/ana.jpg"))), 
+Member.create(name: "Patricia", dayshift: true, availability: true, email: "patricia@catteam.com",project_id: 3,avatar: File.open(Rails.root.join("db/seeds/patricia.jpg")))
 ];
 
 projects = [

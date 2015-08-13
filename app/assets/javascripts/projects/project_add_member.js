@@ -23,7 +23,7 @@
               '<li class="collection-item avatar">'+
                 '<div class="row">'+
                    '<div class="col s10">'+
-                    '<i class="fa fa-picture-o circle"></i>'+
+                    '<img src="'+ member.avatar.url +'" alt="" class="circle">'+
                      '<span class="title">'+ member.name + '</span>'+
                      '<p>' + member.email + '<br>'+ availability +
                      '</p>'+ 
