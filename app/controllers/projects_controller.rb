@@ -18,7 +18,6 @@ class ProjectsController < ApplicationController
 
     member_ids = params[:project][:member_ids]
     Member.where(id: member_ids).update_all(project_id: @project.id)
-    #binding.pry
     redirect_to projects_path
     
   end

@@ -25,7 +25,11 @@
                    '<div class="col s10">'+
                     '<img src="'+ member.avatar.url +'" alt="" class="circle">'+
                      '<span class="title">'+ member.name + '</span>'+
-                     '<p>' + member.email + '<br>'+ availability +
+                     '<p>' + member.email + '<br>'+ 
+                      '<div class="member-'+ availability.toLowerCase() + '">' +
+                         availability+
+                         '<div class="availability-circle"></div>'+
+                      '</div>'+
                      '</p>'+ 
                    '</div>'+
                    '<div class="col s2">'+

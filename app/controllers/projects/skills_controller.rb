@@ -4,7 +4,6 @@ class Projects::SkillsController < ApplicationController
     project = Project.find(params[:project_id])
     project.skills << new_skills
     skills = project.skills 
-    binding.pry 
     render json: { project: project, skills: skills}
   end
 
