@@ -39,10 +39,10 @@
 
 }
 
-#header {
+#header a {
 	color: black;
 }
 
-#sign-in-button {
+a #sign-in-button  {
 	color: black;
 }

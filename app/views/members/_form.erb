@@ -1,11 +1,6 @@
-<div class="create-member-title"><h2 id="create-member">Create Member</h2></div>
+<div class="create-member-title"><h2 id="create-member">New Member</h2></div>
 <%= image_tag("yellow-balloon-tied-with-red-thread.jpg", class: "ballons-members") %>
-  <% if !@member.errors.empty?  %>
-    <%@member.errors.messages.each do |key, value|%>
-    <div> <%="#{key}: #{value}" %> </div>
-    <% end %>
-  <%end%>
-
+  
 
 <div class="container create-member">
   <div class = "row">
@@ -15,7 +10,6 @@
     <%= f.text_field :name %><br/>
     <% if @member.errors[:name] %>
     <div class="error-for-name">
-    <%=@member.errors[:name].join(",") %>
     </div>
     <%end%>
     </div>
@@ -44,7 +38,7 @@
 
   <div class="row">
     <div class="col s6 offset-s3">
-    <%= label_tag :Availability, class: "labels" %>
+    <%= label_tag :availability, nil, class: "labels" %>
     <p><%= radio_button_tag(:availability, "true") %>
     <%= label_tag(:availability_true, "Available") %>
     <%= radio_button_tag(:availability, "false") %>
