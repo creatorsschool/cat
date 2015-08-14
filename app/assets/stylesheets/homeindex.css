@@ -1,10 +1,32 @@
+.bottomdiv {
+	position:fixed;
+	width: 100%;
+	bottom:0;
+	background-color: #a7ffeb;
+  opacity: 0.9;
+  color: gray;
+  text-align: center;
+  height:60px;
+}
+
+.bottomdiv h2 {
+	font-size: 20px;
+}
+
 .home_image {
+	top: -100px;
+	width:100%;
+	position:fixed;
+	z-index: -2;
+	opacity:0.9;
+}
+
+.index_image {
 	top: -122px;
 	width:100%;
 	position:fixed;
 	z-index: -2;
 	opacity:0.9;
-
 }
 
 .filter {
@@ -39,7 +61,11 @@
 
 }
 
-#header a {
+#header a{
+	color: black;
+}
+
+#black {
 	color: black;
 }
 

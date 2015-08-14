@@ -17,11 +17,11 @@
 
       <ul class="right">
         <% if signed_in? -%>
-          <li id="header">            
-            <%= current_user.email %>
+          <li id="black">        
+              <%= current_user.email %>
           </li>
           <li id="header">
-            <%= link_to ("Home"), home_path, class: "nav-text"  %>
+              <%= link_to ("Home"), home_path, class: "nav-text" %>
           </li>
           <li id="header">
             <%= link_to ("About"), root_path, class: "nav-text" %>
