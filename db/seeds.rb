@@ -6,11 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# users = [
-# User.create(email: "ana@catteam.com", password: "ana"),
-# User.create(email: "delmar@catteam.com", password: "delmar"),
-# User.create(email: "patricia@catteam.com", password: "patricia")
-# ]
+ users = [
+ User.create(email: "ana@catteam.com", password: "ana"),
+ User.create(email: "delmar@catteam.com", password: "delmar"),
+ User.create(email: "patricia@catteam.com", password: "patricia")
+ ];
 skills = [
 Skill.create(name:"css"),
 Skill.create(name:"ruby"),
@@ -60,4 +60,4 @@ ProjectSkill.create(project_id: projects[0].id, skill_id: skills[3].id),
 ProjectSkill.create(project_id: projects[1].id, skill_id: skills[0].id),
 ProjectSkill.create(project_id: projects[2].id, skill_id: skills[1].id),
 ProjectSkill.create(project_id: projects[2].id, skill_id: skills[2].id)
-]
+];
