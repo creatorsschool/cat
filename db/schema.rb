@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20150812140208) do
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.datetime "beginning"
     t.integer  "duration"
     t.datetime "created_at"
     t.datetime "updated_at"

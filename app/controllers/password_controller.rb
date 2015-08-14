@@ -17,3 +17,4 @@ class Clearance::PasswordsController < Clearance::BaseController
     @user = find_user_for_edit
     render template: 'passwords/edit'
   end
+end
