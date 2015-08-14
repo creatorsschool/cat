@@ -11,7 +11,6 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    binding.pry
     @project = Project.create(project_params)
     skill_ids = params[:project][:skill_ids]
     
