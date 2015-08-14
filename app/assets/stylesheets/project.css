@@ -25,6 +25,8 @@
   transform: translate(-50%,50%);
   opacity: 0;
 }
+
+
 .box-left{
   transition: all 1s;
 }
@@ -68,12 +70,23 @@ margin-top: 50px;
   opacity: 1;
 }
 
-a .fa.fa-plus-circle.small.icon-center {
-  margin-top: -201px;
-  margin-left: 540px;
+#add-button, #search-button, #modal-pencil, #goto-index {
+  color: white;
 }
 
 
+#main-form{
+  transition: all 1s;
+}
+#main-form.open{
+  transform: translateX(-25%);
+}
 
-
+#secondary-form{
+  transition: all 0.5s;
+  opacity: 0;
+}
+#secondary-form.show{
+  opacity: 1;
+}
 

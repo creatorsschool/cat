@@ -1,19 +1,19 @@
 $(document).ready(function(){
 
-  $("#show-form, #refresh-form, input").on("click", function(e){
-    //e.preventDefault();
+  $("#skills-checkbox ").on("click", function(e){
+   //e.preventDefault();
+   $("#main-form").addClass("open");
 
+   //$("#secondary-form")
    $.ajax({
-      type: "POST",
-      url: "/projects",
+      type: "GET",
+      url: "/projects/select_members",
       data: $('#main-form form').serialize(),
       success: function(data){
         console.log(data);
-        $("#main-form").removeClass("offset-s3");
-        $("#secondary-form").removeClass("hide-form");
-        $("#main-form-button").removeClass("hide-form");
+       
+        setTimeout(function(){$("#secondary-form").addClass("show");},800);
         $("#create-button").removeClass("hide-form");
-        $("#show-form").addClass("hide-form");
 
         $('#membersList').html('');
         data.members.forEach(function(member) {
@@ -24,21 +24,14 @@ $(document).ready(function(){
               '</div>');
         });
 
-        $('#secondary-form form').attr({ 
-          action: '/projects/' + data.project.id + '/update_members',
-        });
-
-        /*$('#secondary-form form').attr('action','/projects/' + data.project.id + '/update_members'});*/
-      },
+       },
       error: function(xhr, status, error) {
         console.log(error);
       }
     });
   });
 
-  $("#create-project").on("click", function(){
-    $('#secondary-form form').submit();
-  });
+  
 
   $('.modal-trigger').leanModal();
 
@@ -50,7 +43,7 @@ $(document).ready(function(){
   });
 
   $('html').on('click',function(e){
-    
+
     if (!$.contains($('.row.boxes')[0],e.target)){
       console.log('qqq');
       $("#skills-div").removeClass("open");
@@ -58,4 +51,33 @@ $(document).ready(function(){
       $("#add-skill-member").addClass("hidden");
     }
   });
+
+  $("#search-button").on("click",function(){
+    $("#search-input").toggleClass("hide-form");
+  });
+
+  $('#search-input input').on('keyup', function(event) {
+    event.preventDefault();
+
+    $.ajax({
+      url: "/projects/search",
+      data: $('#search-input input').serialize(),
+      success: function(data) {
+        
+        $('#projectsList').html('');
+        data.projects.forEach(function(project) {
+          $('#projectsList').append(
+            '<li class="collection-item">'+
+                '<div>'+
+                 project.name +
+                 '<a class="secondary-content" rel="nofollow" data-method="delete" href="/projects/'+
+                 project.id + '"><i class="fa fa-times"></i></a>'+ 
+                 '<a class="secondary-content" href="/projects/'+ project.id + '"><i class="fa fa-info-circle"></i></a>'+
+               '</div>'+                    
+              '</li>' );  
+        });
+      }
+    });
+  });
+
 });

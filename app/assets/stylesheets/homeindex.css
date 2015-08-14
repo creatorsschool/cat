@@ -1,3 +1,18 @@
+.bottomdiv {
+	position:fixed;
+	width: 100%;
+	bottom:0;
+	background-color: #a7ffeb;
+  opacity: 0.9;
+  color: gray;
+  text-align: center;
+  height:60px;
+}
+
+.bottomdiv h2 {
+	font-size: 20px;
+}
+
 .home_image {
 	top: -300px;
 	left:100px;
@@ -54,11 +69,4 @@
 
 #sign-in-button {
 	color: black;
-}
-
-#members-banner {
-  text-align: center;
-  margin-top: 48px;
-  color: #263238;
-  opacity: 1;
 }
